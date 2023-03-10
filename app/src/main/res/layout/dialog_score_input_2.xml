@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/iv_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:src="@mipmap/ic_state_to_start"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/shape_dialog_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_finish">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:text="成绩录入"
+            android:textColor="@color/color_gray_424242"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            tools:text="身高体重考核：张小三"
+            android:textColor="@color/color_gray_BDBDBD"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+<!--        <Spinner-->
+<!--            android:id="@+id/spanner"-->
+<!--            android:layout_width="290dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:entries="@array/elementsArray"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:textColor="#101010"-->
+<!--            android:textSize="16sp"-->
+<!--            app:layout_constraintLeft_toLeftOf="@id/tv_title"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tv_content" />-->
+
+        <EditText
+            android:id="@+id/et_score_h"
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_bg_btn_blue_ea_round"
+            android:layout_marginTop="6dp"
+            android:textColor="#101010"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:hint="请输入成绩"
+            android:paddingLeft="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_content" />
+        <TextView
+            android:id="@+id/tv_unit1"
+            app:layout_constraintLeft_toRightOf="@id/et_score_h"
+            app:layout_constraintBottom_toBottomOf="@id/et_score"
+            app:layout_constraintTop_toTopOf="@id/et_score"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cm"/>
+
+        <EditText
+            android:id="@+id/et_score"
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_bg_btn_blue_ea_round"
+            android:layout_marginTop="6dp"
+            android:textColor="#101010"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:hint="请输入成绩"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="6dp"
+            app:layout_constraintLeft_toRightOf="@id/tv_unit1"
+            app:layout_constraintTop_toBottomOf="@id/tv_content" />
+        <TextView
+            android:id="@+id/tv_unit2"
+            app:layout_constraintLeft_toRightOf="@id/et_score"
+            app:layout_constraintBottom_toBottomOf="@id/et_score"
+            app:layout_constraintTop_toTopOf="@id/et_score"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kg"/>
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="113dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_bg_btn_blue29_round"
+            android:gravity="center"
+            android:text="确认提交"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_score" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

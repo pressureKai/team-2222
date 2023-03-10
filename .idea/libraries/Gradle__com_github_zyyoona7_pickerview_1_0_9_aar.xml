@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.zyyoona7:pickerview:1.0.9@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c655f2f8e769d617a98ad7a9e7fb5345/pickerview-1.0.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c655f2f8e769d617a98ad7a9e7fb5345/pickerview-1.0.9/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c655f2f8e769d617a98ad7a9e7fb5345/pickerview-1.0.9/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.zyyoona7/pickerview/1.0.9/e8104c16504ac8c0e3139524e2892a99951bb8b8/pickerview-1.0.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.zyyoona7/pickerview/1.0.9/8febc9c5e3b23d59bbfdb82ee1157c7e925838e7/pickerview-1.0.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

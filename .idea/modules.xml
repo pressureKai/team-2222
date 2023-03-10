@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/team.iml" filepath="$PROJECT_DIR$/.idea/modules/team.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/team.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/team.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.iml" filepath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.unitTest.iml" />
+    </modules>
+  </component>
+</project>

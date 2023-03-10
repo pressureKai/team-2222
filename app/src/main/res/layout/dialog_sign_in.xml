@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="48dp"
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:padding="16dp"
+                android:gravity="center"
+                android:background="@color/color_blue2_alpha"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:text="考勤打卡设置"
+                android:layout_height="wrap_content"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:text="周期打卡设置"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.zyyoona7.wheel.WheelView
+                    android:id="@+id/wheelview"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:layout_margin="16dp"
+                    android:text="秒"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_gray_E0E0E0"/>
+
+            <LinearLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/xzjh"
+                    ></Spinner>
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/checkbox_all_layout"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:padding="16dp"-->
+<!--                        android:text="全部人员"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+
+<!--                    <View-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_weight="1"/>-->
+
+
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/checkbox_all"-->
+<!--                        android:layout_marginRight="16dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:focusable="false"-->
+<!--                        android:clickable="false"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+<!--                </LinearLayout>-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/checkbox_group_layout"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:padding="16dp"-->
+<!--                        android:text="分组人员"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+
+<!--                    <View-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_weight="1"/>-->
+
+
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/checkbox_group"-->
+<!--                        android:layout_marginRight="16dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:focusable="false"-->
+<!--                        android:clickable="false"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+<!--                </LinearLayout>-->
+
+
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/checkbox_task_layout"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:padding="16dp"-->
+<!--                        android:text="任务人员"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+
+<!--                    <View-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_weight="1"/>-->
+
+
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/checkbox_task"-->
+<!--                        android:layout_marginRight="16dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:focusable="false"-->
+<!--                        android:clickable="false"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+<!--                </LinearLayout>-->
+
+
+            </LinearLayout>
+
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_gray_E0E0E0"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/cancel"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="取消"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_blue2_alpha"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/confirm"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="确定"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@color/color_blue2_alpha"
+                    android:textColor="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
+

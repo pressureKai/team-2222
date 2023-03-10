@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">人工采集录入软件</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string-array name="elementsArray">
+        <item>合格</item>
+        <item>不合格</item>
+    </string-array>
+</resources>

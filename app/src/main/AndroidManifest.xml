@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jiangtai.team">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许程序挂载和反挂载文件系统可移动存储 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" /> <!-- 允许程序读取所有者数据的权限 -->
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" /> <!-- 允许程序写入但不读取所有者数据 -->
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" /> <!-- 允许程序访问GPS位置信息 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 允许程序读取设备信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许使用PowerManager的WakeLocks保持进程在休眠时从屏幕消失 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许程序访问网络 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序访问Wi-Fi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" /> <!-- 允许程序访问有关GSM网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> <!-- 允许程序读取底层系统日志文件 -->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" /> <!-- SDK2.3需要android.permission.WRITE_SETTINGS权限 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" /> <!-- 获取任务权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".application.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Training">
+
+        <activity android:name=".ui.signIn.DetailsRwAvtivity" />
+        <activity android:name=".ui.signIn.SigninDetailsAdapterActivity" />
+        <activity android:name=".ui.signIn.UpdateSigninActivity" />
+        <activity android:name=".ui.returnDate.ReturnDate" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ef86b238293a2014d4ef9235dcb8104e" /> <!-- 地图CLD服务器 -->
+        <meta-data
+            android:name="com.cld.lbsapi.API_KEY"
+            android:value="c78460b2cc0v317bd346bc3f" />
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity
+            android:name=".ui.taskinfo.TaskInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.achievement.AchievementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.person.PersonListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.person.PersonScoreDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.practice.PracticeScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.map.MapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.majorpracticedetail.MajorPracticeDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.majorpracticepeople.MajorPracticePeopleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.majorpracticescore.MajorPracticeScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.majorpracticedaydetail.MajorPracticeDayDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.task.MajorTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.task.MajorProjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.beidoureceiver.BeiDouReceiverHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.beidoureceiver.BeiDouSendHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.amap.api.maps.offlinemap.OfflineMapActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.data.DataActivity" />
+        <activity android:name=".ui.data.EnvironmentDataActivity" />
+        <activity android:name=".ui.data.InspectionDataActivity" />
+        <activity android:name=".ui.login.NewLoginActivity" />
+        <activity android:name=".ui.countMain.CountMainActivity" />
+        <activity android:name=".ui.data.OilActivity" />
+        <activity android:name=".ui.data.HelicopterOilActivity" />
+        <activity android:name=".ui.data.CarNormalActivity" />
+        <activity android:name=".ui.data.CarFixActivity" />
+        <activity android:name=".ui.data.AirDropActivity" />
+        <activity android:name=".ui.data.DeviceActivity" />
+        <activity android:name=".ui.data.WeatherActivity" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="780" />
+
+        <receiver android:name=".ui.receiver.SignalReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.narrowband_info" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ui.receiver.BeiDouReceiver">
+            <intent-filter>
+                <action android:name="nci.hq.bd.service.RevSend" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".ui.receiver.BeiDouService" />
+        <service android:name=".ui.receiver.CheckDistanceService" />
+        <service android:name=".ui.receiver.SignInService" />
+        <service android:name=".ui.receiver.UploadDataService" />
+    </application>
+
+</manifest>

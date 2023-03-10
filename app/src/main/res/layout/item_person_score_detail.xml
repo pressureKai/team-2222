@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_gray_FAFAFA">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="11dp"
+        tools:text="身高体重考核"
+        android:textColor="@color/color_gray_BDBDBD"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        tools:text="8888"
+        android:textColor="@color/color_gray_BDBDBD"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/tv_name"
+        app:layout_constraintTop_toTopOf="@id/tv_name" />
+    <TextView
+        android:id="@+id/tv_task_state"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        tools:text="已完成"
+        android:textColor="@color/color_gray_BDBDBD"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/tv_id"
+        app:layout_constraintTop_toTopOf="@id/tv_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_name"/>
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_marginRight="13dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/color_gray_BDBDBD"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv_task_state"
+        android:layout_width="100dp"
+        android:layout_height="26dp"
+        tools:text="180m,70kg"/>
+    <View
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/divider_line_1"
+        android:layout_marginHorizontal="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="21dp"
+        android:background="@color/color_gray_E0E0E0"/>
+</android.support.constraint.ConstraintLayout>

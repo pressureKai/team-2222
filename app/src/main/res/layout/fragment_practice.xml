@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_ECF0F4">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:paddingTop="6dp"
+        android:text="学员名单"
+        android:textColor="@color/color_gray_424242"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/tv_upload"
+        android:layout_width="96dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/shape_bg_btn_blue_round"
+        android:gravity="center"
+        android:text="上传成绩"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_person"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+</android.support.constraint.ConstraintLayout>

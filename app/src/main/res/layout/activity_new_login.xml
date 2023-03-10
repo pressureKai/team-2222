@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_ECF0F4"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_gravity="center"
+            android:text="欢迎登录"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="请使用账号密码登录"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <LinearLayout
+            android:background="@drawable/shape_bg_btn_white_round_25"
+            android:layout_marginTop="20dp"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp">
+
+            <ImageView
+                android:src="@drawable/icon_new_account"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+
+
+
+            <EditText
+                android:id="@+id/ed_account"
+                android:layout_marginLeft="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:lines="1"
+                android:hint="账号"
+                android:background="@null"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_account_error_message"
+            android:visibility="invisible"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="24dp"
+            android:text="账号错误,请重新输入"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:background="@drawable/shape_bg_btn_white_round_25"
+            android:layout_marginTop="20dp"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp">
+
+            <ImageView
+                android:src="@drawable/icon_new_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+
+
+
+            <EditText
+                android:id="@+id/ed_password"
+                android:layout_marginLeft="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:lines="1"
+                android:hint="密码"
+                android:background="@null"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_password_error_message"
+            android:visibility="invisible"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="24dp"
+            android:text="密码错误,请重新输入"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+        <Button
+            android:id="@+id/bt_commit"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/shape_bg_btn_blue_round_8"
+            android:text="登     录"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="theme_color">@android:color/white</color>
+    <color name="transpa">#00000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_gray_101010">#101010</color>
+    <color name="color_gray_ECF0F4">#ECF0F4</color>
+    <color name="color_blue_3D5AFE">#3D5AFE</color>
+    <color name="color_blue_2979FF">#2979FF</color>
+    <color name="color_blue_2979FF_alpha">#402979FF</color>
+    <color name="color_blue2_alpha">#0D2949</color>
+    <color name="color_blue_EAF2FA">#EAF2FA</color>
+    <color name="color_gray_424242">#424242</color>
+    <color name="color_gray_BDBDBD">#BDBDBD</color>
+    <color name="color_gray_EEEEEE">#D1D1D1</color>
+    <color name="color_gray_E0E0E0">#E0E0E0</color>
+    <color name="color_gray_757575">#757575</color>
+    <color name="color_gray_616161">#616161</color>
+    <color name="color_gray_FAFAFA">#FAFAFA</color>
+    <color name="emergency_color">#4DCC0000</color>
+    <color name="my_color">#536D8C</color>
+
+    <color name="color_gray_757575_alpha">#4D757575</color>
+</resources>

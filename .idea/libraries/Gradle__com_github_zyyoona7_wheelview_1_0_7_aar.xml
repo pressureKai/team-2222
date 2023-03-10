@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.zyyoona7:wheelview:1.0.7@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb582c020b633ca7c589c68459163cb9/wheelview-1.0.7/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb582c020b633ca7c589c68459163cb9/wheelview-1.0.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb582c020b633ca7c589c68459163cb9/wheelview-1.0.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb582c020b633ca7c589c68459163cb9/wheelview-1.0.7/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.zyyoona7/wheelview/1.0.7/ba53af3795647a0d098b90b9d4b9ac363ae3cd0c/wheelview-1.0.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.zyyoona7/wheelview/1.0.7/ee189e8d31f5210aeec8fd89159467ea52719722/wheelview-1.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_layout"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        app:cardElevation="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_height="match_parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:paddingVertical="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="26dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/des"
+                app:layout_constraintBottom_toBottomOf="@+id/des"
+                android:id="@+id/cancel"
+                android:text="取消"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+
+            <TextView
+                android:paddingVertical="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="26dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/des"
+                app:layout_constraintBottom_toBottomOf="@+id/des"
+                android:id="@+id/confirm"
+                android:text="确定"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/des"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:text="日期选择"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@+id/des"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="vertical"
+                android:id="@+id/date_picker_layout"
+                android:layout_width="match_parent"
+                app:layout_constraintVertical_weight="1"
+                android:background="@android:color/transparent"
+                android:layout_height="0dp">
+
+
+                <LinearLayout
+                    android:id="@+id/timepicker"
+                    android:minHeight="150dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/year"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/month"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/day"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/hour"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/min"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/second"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

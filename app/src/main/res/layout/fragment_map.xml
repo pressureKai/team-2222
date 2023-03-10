@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_ECF0F4">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapView_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.constraint.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tv_title_layout"
+        android:layout_width="match_parent"
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp"
+        android:background="@mipmap/my_bag"
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="人装监管"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+
+        <ImageView
+            android:id="@+id/tv_title"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/my_setting"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/task_icon"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="3dp"
+            android:src="@mipmap/down_task_icon"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintLeft_toRightOf="@id/tv_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/latLng_des"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="30dp"
+        android:background="@color/color_gray_757575_alpha"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_layout"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:id="@+id/tools_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/shape_bg_btn_white_round_3"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:layout_marginTop="95dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/order_layout"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/order"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/broatcast" />
+
+            <TextView
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="命令"
+                android:textColor="@color/black" />
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/search_people_layout"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="4dp"
+                android:id="@+id/search_people"
+                android:src="@mipmap/single_search_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+
+            <TextView
+                android:text="搜索"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/circle_report_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/circle_report"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                android:src="@mipmap/circle_report_icon" />
+
+            <TextView
+                android:id="@+id/circle_des"
+                android:layout_width="30dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="周期上报"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/location_report_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/location_report"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                android:src="@mipmap/location_report_icon" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="位置上报"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="@+id/tools_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/trash_layout"
+            android:layout_width="wrap_content"
+            android:background="@drawable/shape_bg_btn_white_round_3"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/trash"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                android:src="@mipmap/trash_icon" />
+
+            <TextView
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="一键清除"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/electronic_report_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/electronic_report"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                android:src="@mipmap/rectangle_icon" />
+
+            <TextView
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="电子围栏"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/location_my_shelf"
+        android:background="@drawable/shape_bg_btn_white_round_3"
+        app:layout_constraintTop_toBottomOf="@+id/tools_layout"
+        app:layout_constraintLeft_toLeftOf="@+id/tools_layout"
+        app:layout_constraintRight_toRightOf="@id/tools_layout"
+        android:layout_marginTop="35dp"
+        android:padding="4dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/back_location_icon"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
