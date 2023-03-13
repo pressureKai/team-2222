@@ -14,10 +14,11 @@ import kotlinx.android.synthetic.main.activity_car_fix.et_notice
 import kotlinx.android.synthetic.main.activity_car_fix.et_number
 import kotlinx.android.synthetic.main.activity_car_fix.et_type
 import kotlinx.android.synthetic.main.activity_car_fix.iv_back
+import org.litepal.LitePal
 import org.litepal.LitePal.where
 
 
-class CarFixActivity: BaseActivity() {
+class CarFixActivity : BaseActivity() {
     override fun attachLayoutRes(): Int {
         return R.layout.activity_car_fix
     }
@@ -27,6 +28,7 @@ class CarFixActivity: BaseActivity() {
     }
 
     override fun initView() {
+        initImmersionBar(dark = true)
         iv_back.setOnClickListener {
             finish()
         }
@@ -34,11 +36,12 @@ class CarFixActivity: BaseActivity() {
         bt_commit.setOnClickListener {
             commit()
         }
+        reshowData()
     }
 
 
-    private fun commit(){
-        if(checkResult()){
+    private fun commit() {
+        if (checkResult()) {
             val sNumber = et_number.text.toString()
             val sType = et_type.text.toString()
             val sFixPart = et_fix_part.text.toString()
@@ -60,16 +63,18 @@ class CarFixActivity: BaseActivity() {
                 DeviceInfoBean::class.java
             )
 
-            if(find.size == 0){
+            if (find.size == 0) {
                 ToastUtils.showShort("您还未录入该设备的日常信息")
             }
             //保存维修信息
             carFixBean.save()
 
+            finish()
+            ToastUtils.showShort("保存成功")
         }
     }
 
-    private fun checkResult():Boolean{
+    private fun checkResult(): Boolean {
         val sNumber = et_number.text.toString()
         val sType = et_type.text.toString()
         val sFixType = et_fix_part.text.toString()
@@ -77,29 +82,29 @@ class CarFixActivity: BaseActivity() {
         val sPerson = et_person.text.toString()
         val sNotice = et_notice.text.toString()
 
-        val isChecked = sNumber.isNotEmpty()  && sType.isNotEmpty()
+        val isChecked = sNumber.isNotEmpty() && sType.isNotEmpty()
                 && sFixType.isNotEmpty() && sFixTime.isNotEmpty() && sPerson.isNotEmpty() && sNotice.isNotEmpty()
 
-        if(!isChecked){
-            if(!checkAndToast(et_number)){
+        if (!isChecked) {
+            if (!checkAndToast(et_number)) {
                 return false
             }
-            if(!checkAndToast(et_name)){
+            if (!checkAndToast(et_name)) {
                 return false
             }
-            if(!checkAndToast(et_type)){
+            if (!checkAndToast(et_type)) {
                 return false
             }
-            if(!checkAndToast(et_fix_part)){
+            if (!checkAndToast(et_fix_part)) {
                 return false
             }
-            if(!checkAndToast(et_fix_time)){
+            if (!checkAndToast(et_fix_time)) {
                 return false
             }
-            if(!checkAndToast(et_person)){
+            if (!checkAndToast(et_person)) {
                 return false
             }
-            if(!checkAndToast(et_notice)){
+            if (!checkAndToast(et_notice)) {
                 return false
             }
 
@@ -112,12 +117,40 @@ class CarFixActivity: BaseActivity() {
     override fun initListener() {
 
     }
-    private fun checkAndToast(et: EditText):Boolean{
-        return if(et.text.toString().isEmpty()){
+
+    private fun checkAndToast(et: EditText): Boolean {
+        return if (et.text.toString().isEmpty()) {
             ToastUtils.showShort(et.hint)
             false
         } else {
             true
+        }
+    }
+
+
+    private fun reshowData() {
+        val id = intent.getStringExtra("id")
+        if (id != null && id.isNotEmpty()) {
+            val find = LitePal.where(
+                "recordID = ? and loginId = ? ",
+                id.toString(),
+                CommonUtil.getLoginUserId()
+            ).find(
+                CarFixBean::class.java
+            )
+
+            if (find.size == 0) {
+                ToastUtils.showShort("找不到该记录")
+                finish()
+                return
+            }
+            val carFixBean = find.first()
+            et_number.setText(carFixBean.wxdx)
+            et_type.setText(carFixBean.zblb)
+            et_fix_part.setText(carFixBean.wxpj)
+            et_fix_time.setText(carFixBean.wxsj)
+            et_person.setText(carFixBean.wxry)
+            et_notice.setText(carFixBean.bz)
         }
     }
 

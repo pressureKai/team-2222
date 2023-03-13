@@ -9,7 +9,13 @@ import com.jiangtai.team.bean.CountRecordBean
 import com.jiangtai.team.bean.DeviceInfoBean
 import com.jiangtai.team.util.CommonUtil
 import com.jiangtai.team.util.GsonInstance
+import kotlinx.android.synthetic.main.activity_car_fix.*
 import kotlinx.android.synthetic.main.activity_car_normal.*
+import kotlinx.android.synthetic.main.activity_car_normal.bt_commit
+import kotlinx.android.synthetic.main.activity_car_normal.et_notice
+import kotlinx.android.synthetic.main.activity_car_normal.et_number
+import kotlinx.android.synthetic.main.activity_car_normal.et_type
+import kotlinx.android.synthetic.main.activity_car_normal.iv_back
 import org.litepal.LitePal
 import java.util.*
 
@@ -24,6 +30,7 @@ class CarNormalActivity: BaseActivity() {
     }
 
     override fun initView() {
+        initImmersionBar(dark = true)
         iv_back.setOnClickListener {
             finish()
         }
@@ -38,6 +45,7 @@ class CarNormalActivity: BaseActivity() {
         tv_execute.setOnClickListener {
 
         }
+        reshowData()
     }
 
 
@@ -125,6 +133,37 @@ class CarNormalActivity: BaseActivity() {
     }
     override fun initListener() {
 
+    }
+
+
+    private fun reshowData() {
+        val id = intent.getStringExtra("id")
+        if (id != null && id.isNotEmpty()) {
+            val find = LitePal.where(
+                "recordID = ? and loginId = ? ",
+                id.toString(),
+                CommonUtil.getLoginUserId()
+            ).find(
+                DeviceInfoBean::class.java
+            )
+
+            if (find.size == 0) {
+                ToastUtils.showShort("找不到该记录")
+                finish()
+                return
+            }
+
+            val deviceInfoBean = find.first()
+            et_number.setText(deviceInfoBean.vid)
+            et_type.setText(deviceInfoBean.zblb)
+            //剩余油量
+            et_oil.setText(deviceInfoBean.yyl)
+            //累计摩托小时
+            et_hour.setText(deviceInfoBean.mtxs)
+            //备注
+            et_notice.setText(deviceInfoBean.bz)
+
+        }
     }
 
 

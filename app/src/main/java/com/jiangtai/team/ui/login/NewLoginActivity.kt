@@ -68,12 +68,14 @@ class NewLoginActivity :BaseActivity() {
             }
 
             override fun onFailed() {
-                loginUserName = "007"
-                loginUserId = "007"
+                loginUserName = ed_account.text.toString()
+                loginUserId = ed_account.text.toString()
                 loginUserPart = "研发部"
                 loginUserType = "管理员"
                 val intent = Intent(this@NewLoginActivity, CountMainActivity::class.java)
                 startActivity(intent)
+
+                finish()
             }
         })
     }

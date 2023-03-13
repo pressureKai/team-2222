@@ -108,6 +108,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f157aeab4ab6e8f9521fabff6852a68/wheelview-1.0.7-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c41a859cbafb1b52cfbe9b7fb99bdb0/Android-PickerView-4.1.9-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4ba730c60e2bac1fd91b3c9b6410114/wheelview-4.1.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57c78ae8f0d545a43fe469d53947e673/FlycoTabLayout_Lib-2.1.2-api.jar</arg>
                 <arg>$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar</arg>
                 <arg>$USER_HOME$/AppData/Local/Android/Sdk/build-tools/29.0.2/core-lambda-stubs.jar</arg>
               </args>
@@ -237,6 +238,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.zyyoona7:wheelview:1.0.7@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.contrarywind:Android-PickerView:4.1.9@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.contrarywind:wheelview:4.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="team.app.main" />
 </module>

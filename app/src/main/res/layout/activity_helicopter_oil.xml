@@ -113,6 +113,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_number"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -156,6 +157,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_time"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -197,6 +199,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_type"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -239,6 +242,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_oil_cover"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -318,17 +322,20 @@
                                 android:layout_weight="4"
                                 android:layout_height="wrap_content">
 
-                                <EditText
-                                    android:paddingVertical="16dp"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    android:hint="请输入Y品牌号"
-                                    android:layout_width="match_parent"
-                                    android:background="@null"
-                                    android:textSize="14sp"
-                                    android:textColor="@color/black"
-                                    android:layout_height="wrap_content"/>
 
+                                <EditText
+                                    android:id="@+id/et_brand_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:hint="请输入Y品牌号"
+                                    android:paddingVertical="16dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    tools:layout_editor_absoluteX="0dp" />
 
                                 <View
                                     android:layout_width="match_parent"
@@ -362,6 +369,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_oil_purity"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
@@ -409,6 +417,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_oil_water"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -520,6 +529,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_notice"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
@@ -591,6 +601,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_add_oil_person"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -634,6 +645,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_oil_captain"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -675,6 +687,7 @@
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:id="@+id/et_oil_other"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -706,6 +719,7 @@
 
 
                 <Button
+                    android:id="@+id/bt_commit"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:layout_marginHorizontal="120dp"

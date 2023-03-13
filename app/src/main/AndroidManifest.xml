@@ -122,7 +122,8 @@
         <activity android:name=".ui.data.EnvironmentDataActivity" />
         <activity android:name=".ui.data.InspectionDataActivity" />
         <activity android:name=".ui.login.NewLoginActivity" />
-        <activity android:name=".ui.countMain.CountMainActivity" />
+        <activity android:name=".ui.countMain.CountMainActivity"
+            android:launchMode="singleTask"/>
         <activity android:name=".ui.data.OilActivity" />
         <activity android:name=".ui.data.HelicopterOilActivity" />
         <activity android:name=".ui.data.CarNormalActivity" />
@@ -130,6 +131,7 @@
         <activity android:name=".ui.data.AirDropActivity" />
         <activity android:name=".ui.data.DeviceActivity" />
         <activity android:name=".ui.data.WeatherActivity" />
+        <activity android:name=".ui.data.DataListActivity" />
 
         <meta-data
             android:name="design_width_in_dp"

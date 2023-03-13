@@ -6,14 +6,47 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0267bb3-4ee5-4528-ab1a-4a68df5f3a6e" name="Default Changelist" comment="" />
+    <list default="true" id="f0267bb3-4ee5-4528-ab1a-4a68df5f3a6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_flyco_tablayout_FlycoTabLayout_Lib_2_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DataShowBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/HelicopterOilInfoBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataListActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_data.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/litepal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/litepal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_helicopter_oil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_helicopter_oil.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_login.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +90,9 @@
     <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -64,20 +100,22 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="20ILfZwr33zJgEN8UCAPbAqqDKS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="PROJECT_TRUSTED_KEY" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/android-online-translate/android-online-translate/android-demo-fanyi-combo/android-demo-fanyi-combo/translateDemo-Android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\drawable" />
       <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\layout" />
+      <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\drawable" />
       <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\Administrator\Desktop\demo\team-beta\app\src\main\res\layout" />
       <recent name="C:\Users\Administrator\Desktop\demo\team-beta\app\src\main\res\drawable" />

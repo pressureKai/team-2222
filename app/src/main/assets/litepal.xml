@@ -12,7 +12,7 @@
        定义数据库的版本。
        每次你想要升级数据库，修改映射标记中定义的版本值+ 1，数据库升级将会被自动处理。
        -->
-    <version value="25" />
+    <version value="26" />
 
     <!--
         用映射标签指定的modle在表中定义数据模型.
@@ -43,6 +43,7 @@
         <mapping class="com.jiangtai.team.bean.AirDropInfo"/>
         <mapping class="com.jiangtai.team.bean.CountRecordBean"/>
         <mapping class="com.jiangtai.team.bean.CarFixBean"/>
+        <mapping class="com.jiangtai.team.bean.HelicopterOilInfoBean"/>
 
 
 <!--        <mapping class="com.cetc.serivcebeidou.entity.BeiDouReceiverEntity" />-->

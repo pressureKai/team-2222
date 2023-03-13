@@ -14,23 +14,39 @@ public class WeatherInfoBean extends LitePalSupport {
 
     //登录的人员ID(用于区分每个登录的不同用户的数据)
     private String loginId;
-
+    //总云量
     private String ZYL;
+    //低云量
     private String DYL;
+    //SC云量
     private String SCL;
+    //SC云高
     private String SCG;
+    //Fn云量
     private String FNL;
+    //Fn云高
     private String FNG;
+    //风向（度）
     private String FX;
+    //风速
     private String FS;
+    //能见度
     private String NJD;
+    //当前天气
     private String DQTQ;
+    //气温
     private String QW;
+    //露点温度
     private String LDWD;
+    //相对湿度
     private String XDSD;
+    //水汽压
     private String SQY;
+    //本站气压
     private String BZQY;
+    //海平面气压
     private String HPMQY;
+    //备注
     private String BZ;
 
     private String recordID;

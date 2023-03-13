@@ -23,6 +23,7 @@ class DeviceActivity: BaseActivity() {
     }
 
     override fun initView() {
+        initImmersionBar(dark = true)
         iv_back.setOnClickListener {
             finish()
         }
@@ -34,12 +35,6 @@ class DeviceActivity: BaseActivity() {
                 val sTime = et_time.text.toString()
                 val sTemperature = et_temperature.text.toString()
                 val sNotice = et_notice.text.toString()
-
-//                private String SSBH;
-//                private String QWXX;
-//                private String WD;
-//                private String SJSJ;
-//                private String SSLB;
 
                 val deviceFeelInfoBean = DeviceFeelInfoBean()
                 deviceFeelInfoBean.ssbh = sNumber

@@ -1,5 +1,9 @@
 package com.jiangtai.team.bean
 
+import android.content.Intent
+import com.blankj.utilcode.util.ToastUtils
+import com.jiangtai.team.application.App
+import com.jiangtai.team.ui.data.*
 import com.jiangtai.team.util.CommonUtil.getLoginUserId
 import org.litepal.crud.LitePalSupport
 import java.util.Random
@@ -22,6 +26,48 @@ class CountRecordBean :LitePalSupport() {
     }
 
 
+    fun startActivity(){
+        when(recordType){
+            OIL_TYPE ->{
+                val intent = Intent(App.context, OilActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            AIR_TYPE ->{
+                val intent = Intent(App.context, AirDropActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            DEVICE_TYPE ->{
+                val intent = Intent(App.context, CarNormalActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            DEVICE_FILL_TYPE ->{
+                val intent = Intent(App.context, DeviceActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            WEATHER_TYPE ->{
+                val intent = Intent(App.context, WeatherActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            CAR_FIX_TYPE ->{
+                val intent = Intent(App.context, CarFixActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            HELICOPTER_OIL_TYPE ->{
+                val intent = Intent(App.context, HelicopterOilActivity::class.java)
+                intent.putExtra("id",this.recordID)
+                App.context.startActivity(intent)
+            }
+            else ->{
+                ToastUtils.showShort("未知记录不支持跳转")
+            }
+        }
+    }
 
 
     companion object{
@@ -31,12 +77,14 @@ class CountRecordBean :LitePalSupport() {
         const val DEVICE_FILL_TYPE = 3
         const val WEATHER_TYPE = 4
         const val CAR_FIX_TYPE = 5
-
+        const val HELICOPTER_OIL_TYPE = 5
 
 
 
         fun getCountId(s: String):String{
             return s + Random().nextInt(100000)
         }
+
+
     }
 }

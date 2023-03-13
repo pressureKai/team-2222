@@ -6,7 +6,9 @@ import com.jiangtai.team.R
 import com.jiangtai.team.base.BaseActivity
 import com.jiangtai.team.bean.CountRecordBean
 import com.jiangtai.team.bean.OilInfoBean
+import com.jiangtai.team.util.CommonUtil
 import kotlinx.android.synthetic.main.activity_oil.*
+import org.litepal.LitePal
 import java.util.*
 
 class OilActivity : BaseActivity() {
@@ -19,6 +21,10 @@ class OilActivity : BaseActivity() {
     }
 
     override fun initView() {
+        initImmersionBar(dark = true)
+
+        reshowData()
+
         iv_back.setOnClickListener {
             finish()
         }
@@ -117,5 +123,32 @@ class OilActivity : BaseActivity() {
         } else {
             true
         }
+    }
+
+
+    private fun reshowData(){
+        val id = intent.getStringExtra("id")
+        if(id != null && id.isNotEmpty()){
+            val find = LitePal.where("recordID = ? and loginId = ? ", id.toString(), CommonUtil.getLoginUserId()).find(
+                OilInfoBean::class.java
+            )
+
+            if (find.size == 0) {
+                ToastUtils.showShort("找不到该记录")
+                finish()
+                return
+            }
+
+            val first = find.first()
+            et_number.setText(first.gh)
+            et_name.setText(first.ypmc)
+            et_date.setText(first.sjsj)
+            et_volume_number.setText(first.rjbh)
+            et_apparent_density.setText(first.smd)
+            et_surplus_height.setText(first.yg)
+            et_oil_temperature.setText(first.yw)
+            et_notice.setText(first.bz)
+        }
+
     }
 }

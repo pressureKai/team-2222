@@ -8,11 +8,13 @@ import com.bumptech.glide.Glide
 import com.jaeger.library.StatusBarUtil
 import com.jiangtai.team.R
 import com.jiangtai.team.base.BaseActivity
+import com.jiangtai.team.constant.Constant
 import com.jiangtai.team.login.LoginActivity
 import com.jiangtai.team.ui.login.NewLoginActivity
 import com.jiangtai.team.ui.main.MainActivity
 import com.jiangtai.team.util.CommandUtils
 import com.jiangtai.team.util.KeyUtil
+import com.jiangtai.team.util.Preference
 import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.activity_splash.*
 import org.litepal.LitePal
@@ -26,6 +28,9 @@ class SplashActivity : BaseActivity() {
 
     private lateinit var countDownTimer: CountDownTimer
     private var timeCountInMilliSeconds = 2500L
+
+    private var serverIp: String by Preference(Constant.SERVER_IP, "")
+
     override fun attachLayoutRes(): Int = R.layout.activity_splash
 
     override fun initData() {

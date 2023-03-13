@@ -56,7 +56,7 @@ android {
         variant ->
             variant.outputs.all {
                 //在这里修改apk文件名，引号内的字符串都可以随便定义
-                outputFileName = "Vehicle-${variant.versionName}.apk"
+                outputFileName = "Count-${variant.versionName}.apk"
             }
     }
 
@@ -127,6 +127,7 @@ dependencies {
     implementation 'com.orhanobut:logger:2.1.1'
     implementation 'com.github.zyyoona7:pickerview:1.0.9'
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     api project(':RadarScanViewLibrary')
     api project(':mqtt')
   //  api project(':service433')
