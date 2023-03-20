@@ -14,45 +14,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0267bb3-4ee5-4528-ab1a-4a68df5f3a6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_flyco_tablayout_FlycoTabLayout_Lib_2_1_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DataShowBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/HelicopterOilInfoBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataListActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_data.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CountMapActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/AnimatorUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/CircleBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_cldnavimapsdk_v4_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_cldnavimapsdk_v4_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_dom4j_1_6_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_dom4j_1_6_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_importUntil_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_importUntil_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_libcc_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_libcc_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_poi_3_12_android_a_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_poi_3_12_android_a_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_poi_examples_3_7_20101029_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_poi_examples_3_7_20101029_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_poi_ooxml_schemas_3_12_20150511_a_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_poi_ooxml_schemas_3_12_20150511_a_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_Administrator_Desktop_demo_count_team_beta_app_libs_poi_scratchpad_3_7_20101029_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_poi_scratchpad_3_7_20101029_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RadarScanViewLibrary/team.RadarScanViewLibrary.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/mqtt/team.mqtt.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/litepal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/litepal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_helicopter_oil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_helicopter_oil.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Administrator\.android\avd\Pixel_2_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/xiezekai/.android/avd/Pixel_2_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -104,14 +101,16 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="PROJECT_TRUSTED_KEY" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "/Users/xiezekai/AndroidStudioProjects/team-22223",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\layout" />
@@ -207,7 +206,6 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />

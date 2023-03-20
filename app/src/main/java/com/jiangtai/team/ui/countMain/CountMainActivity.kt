@@ -80,7 +80,7 @@ class CountMainActivity : BaseActivity() {
 
 
         ll_airdrop.setOnClickListener {
-            val intent = Intent(this@CountMainActivity, AirDropActivity::class.java)
+            val intent = Intent(this@CountMainActivity, CountMapActivity::class.java)
             startActivity(intent)
         }
 
