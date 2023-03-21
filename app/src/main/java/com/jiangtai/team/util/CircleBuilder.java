@@ -11,7 +11,7 @@ public class CircleBuilder {
 
     //180, 3, 145, 255
     //10, 0, 0, 180
-    public static final int STROKE_COLOR = Color.argb(180, 3, 145, 200);
+    public static final int STROKE_COLOR = Color.argb(0, 3, 145, 200);
     public static final int FILL_COLOR = Color.argb(10, 0, 0, 180);
 
     //224,236,237
@@ -20,7 +20,7 @@ public class CircleBuilder {
 
     public static Circle addCircle(LatLng latlng, double radius, AMap aMap) {
         CircleOptions options = new CircleOptions();
-        options.strokeWidth(1f);
+        options.strokeWidth(0f);
         options.fillColor(FILL_COLOR);
         options.strokeColor(STROKE_COLOR);
         options.center(latlng);

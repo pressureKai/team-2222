@@ -4,7 +4,6 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import com.amap.api.maps.AMap
 import com.amap.api.maps.CameraUpdateFactory
-import com.amap.api.maps.model.CameraPosition
 import com.amap.api.maps.model.Circle
 import com.amap.api.maps.model.LatLng
 import com.jiangtai.team.R
@@ -34,14 +33,14 @@ class CountMapActivity: BaseActivity() {
 
     override fun initView() {
 
-         aMap = mapView.map
-
+        aMap = mapView.map
         aMap?.mapType =  AMap.MAP_TYPE_NORMAL
         val latLng = LatLng(
             0.toDouble(), 0.toDouble()
         )
         addWaveAnimation (latLng, aMap)
 
+        aMap?.uiSettings?.isScaleControlsEnabled = true
         aMap?.moveCamera(CameraUpdateFactory.changeLatLng(latLng))
     }
 
@@ -90,20 +89,22 @@ class CountMapActivity: BaseActivity() {
      * @param latLng 要展示扩散效果的点经纬度
      * AMap aMap：高德地图
      */
-    fun addWaveAnimation(latLng: LatLng?, aMap: AMap?) {
+    private fun addWaveAnimation(latLng: LatLng?, aMap: AMap?) {
         circleList = ArrayList()
         var radius = 50
-        for (i in 0..3) {
-            radius = radius + 50 * i
-            (circleList as ArrayList<Circle?>).add(CircleBuilder.addCircle(latLng, radius.toDouble(), aMap))
+        for (i in 0..1) {
+            radius += 50 * i
+            (circleList as ArrayList<Circle?>).add(
+                CircleBuilder.addCircle(latLng, radius.toDouble(), aMap)
+            )
         }
         valueAnimator = AnimatorUtil.getValueAnimator(0, 50
         ) { animation ->
-            val value = animation.getAnimatedValue() as Int
+            val value = animation.animatedValue as Int
             for (i in (circleList as ArrayList<Circle?>).indices) {
-                val nowradius = 50 + 50 * i
+                val nowRadius = 50 + 50 * i
                 val circle = (circleList as ArrayList<Circle?>)[i]!!
-                val radius1 = (value + nowradius).toDouble()
+                val radius1 = (value + nowRadius).toDouble()
                 circle.radius = radius1
                 var strokePercent = 200
                 var fillPercent = 20

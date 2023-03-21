@@ -4,7 +4,6 @@ import android.widget.EditText
 import com.blankj.utilcode.util.ToastUtils
 import com.jiangtai.team.R
 import com.jiangtai.team.base.BaseActivity
-import com.jiangtai.team.bean.OilInfoBean
 import com.jiangtai.team.bean.WeatherInfoBean
 import com.jiangtai.team.util.CommonUtil
 import kotlinx.android.synthetic.main.activity_weather.*
