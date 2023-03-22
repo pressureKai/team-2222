@@ -18,7 +18,6 @@ import io.reactivex.disposables.Disposable;
 
 public abstract class CallbackListObserver<T> implements Observer<T> {
 
-
     @Override
     public void onSubscribe(@NonNull Disposable d) {
         onStart();
@@ -56,5 +55,7 @@ public abstract class CallbackListObserver<T> implements Observer<T> {
      * 请求错误
      */
     protected abstract void onFailed();
+
+
 
 }
