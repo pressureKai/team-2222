@@ -2,6 +2,8 @@ package com.jiangtai.count.ui.data
 
 import android.view.View
 import android.widget.EditText
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder
+import com.bigkoo.pickerview.view.OptionsPickerView
 import com.blankj.utilcode.util.ToastUtils
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
@@ -16,9 +18,12 @@ import kotlinx.android.synthetic.main.activity_car_normal.*
 import kotlinx.android.synthetic.main.activity_car_normal.bt_commit
 import kotlinx.android.synthetic.main.activity_car_normal.et_notice
 import kotlinx.android.synthetic.main.activity_car_normal.et_number
+import kotlinx.android.synthetic.main.activity_car_normal.et_type
 import kotlinx.android.synthetic.main.activity_car_normal.iv_back
 import kotlinx.android.synthetic.main.activity_car_normal.iv_delete
+import kotlinx.android.synthetic.main.activity_car_normal.ll_type
 import kotlinx.android.synthetic.main.activity_device.*
+import kotlinx.android.synthetic.main.fragment_car_fix.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import org.greenrobot.eventbus.EventBus
@@ -27,6 +32,7 @@ import org.litepal.LitePal
 class CarNormalActivity : BaseActivity() {
     private var isStandBy = false
     private var isUpdate = false
+    private var typeList = ArrayList<String>()
     override fun attachLayoutRes(): Int {
         return R.layout.activity_car_normal
     }
@@ -37,6 +43,13 @@ class CarNormalActivity : BaseActivity() {
 
     override fun initView() {
         initImmersionBar(dark = true)
+
+        //Y车、HC运输车、物资保障车
+        typeList.add("Y车")
+        typeList.add("HC运输车")
+        typeList.add("物资保障车")
+        typeList.add("其他")
+
         iv_back.setOnClickListener {
             finish()
         }
@@ -80,6 +93,18 @@ class CarNormalActivity : BaseActivity() {
             } else {
                 ToastUtils.showShort("找不到该记录!")
             }
+        }
+
+        ll_type.setOnClickListener{
+            showPicker(typeList,"装备类别",et_type, callback = {
+
+            })
+        }
+
+        et_type.setOnClickListener {
+            showPicker(typeList,"装备类别",et_type, callback = {
+
+            })
         }
         reshowData()
     }
@@ -278,4 +303,32 @@ class CarNormalActivity : BaseActivity() {
 
             })
     }
+
+
+    private fun showPicker(data:ArrayList<String>,title:String,editText: EditText,callback:(s:String)->Unit) {
+
+        //显示选择框
+        val pvOptions: OptionsPickerView<String> = OptionsPickerBuilder(this) { options1, option2, options3, v -> //返回的分别是三个级别的选中位置
+            callback(data[options1])
+            editText.setText(data[options1])
+        }.build<String>()
+
+
+        //当前选中下标
+        var currentIndex = 0
+
+        val s = editText.text.toString()
+        data.forEachIndexed { index, d ->
+            if(d == s){
+                currentIndex = index
+            }
+        }
+
+        pvOptions.setSelectOptions(currentIndex)
+        pvOptions.setPicker(data)
+        pvOptions.setTitleText(title)
+        pvOptions.show()
+    }
+
+
 }

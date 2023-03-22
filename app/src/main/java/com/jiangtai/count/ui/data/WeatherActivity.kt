@@ -2,6 +2,8 @@ package com.jiangtai.count.ui.data
 
 import android.view.View
 import android.widget.EditText
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder
+import com.bigkoo.pickerview.view.OptionsPickerView
 import com.blankj.utilcode.util.ToastUtils
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
@@ -29,6 +31,9 @@ import org.litepal.LitePal
 
 class WeatherActivity : BaseActivity() {
 
+
+    private val tenTypeList = ArrayList<String>()
+    private val eightTypeList = ArrayList<String>()
     private var isUpdate = false
     override fun attachLayoutRes(): Int {
         return R.layout.activity_weather
@@ -40,6 +45,30 @@ class WeatherActivity : BaseActivity() {
 
     override fun initView() {
         initImmersionBar(dark = true)
+
+
+        tenTypeList.add("1")
+        tenTypeList.add("2")
+        tenTypeList.add("3")
+        tenTypeList.add("4")
+        tenTypeList.add("5")
+        tenTypeList.add("6")
+        tenTypeList.add("7")
+        tenTypeList.add("8")
+        tenTypeList.add("9")
+        tenTypeList.add("10")
+
+
+
+        eightTypeList.add("1")
+        eightTypeList.add("2")
+        eightTypeList.add("3")
+        eightTypeList.add("4")
+        eightTypeList.add("5")
+        eightTypeList.add("6")
+        eightTypeList.add("7")
+        eightTypeList.add("8")
+
         iv_back.setOnClickListener {
             finish()
         }
@@ -71,6 +100,31 @@ class WeatherActivity : BaseActivity() {
             }
         }
         reshowData()
+
+
+        et_total_cloud_cover.setOnClickListener {
+            showPicker(tenTypeList,"总云量",et_total_cloud_cover,{
+
+            })
+        }
+
+        et_low_cloud_cover.setOnClickListener {
+            showPicker(tenTypeList,"低云量",et_low_cloud_cover,{
+
+            })
+        }
+
+        et_sc_cloud_cover.setOnClickListener {
+            showPicker(eightTypeList,"SC云量",et_sc_cloud_cover,{
+
+            })
+        }
+
+        et_fn_cloud_cover.setOnClickListener {
+            showPicker(eightTypeList,"Fn云量",et_fn_cloud_cover,{
+
+            })
+        }
     }
 
     override fun initListener() {
@@ -321,4 +375,31 @@ class WeatherActivity : BaseActivity() {
 
         })
     }
+
+
+    private fun showPicker(data:ArrayList<String>,title:String,editText: EditText,callback:(s:String)->Unit) {
+
+        //显示选择框
+        val pvOptions: OptionsPickerView<String> = OptionsPickerBuilder(this) { options1, option2, options3, v -> //返回的分别是三个级别的选中位置
+            callback(data[options1])
+            editText.setText(data[options1])
+        }.build<String>()
+
+
+        //当前选中下标
+        var currentIndex = 0
+
+        val s = editText.text.toString()
+        data.forEachIndexed { index, d ->
+            if(d == s){
+                currentIndex = index
+            }
+        }
+
+        pvOptions.setSelectOptions(currentIndex)
+        pvOptions.setPicker(data)
+        pvOptions.setTitleText(title)
+        pvOptions.show()
+    }
+
 }
