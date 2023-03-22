@@ -10,9 +10,9 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 4,
-      "versionName": "1.3.7.1",
-      "outputFile": "Vehicle-1.3.7.1.apk"
+      "versionCode": 5,
+      "versionName": "1.0.0",
+      "outputFile": "人工录入采集-1.0.0-beta.apk"
     }
   ]
 }

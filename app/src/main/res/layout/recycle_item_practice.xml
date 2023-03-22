@@ -14,7 +14,7 @@
     android:paddingBottom="16dp">
 
 
-    <com.jiangtai.team.widget.SlideWrapper
+    <com.jiangtai.count.widget.SlideWrapper
         android:id="@+id/slide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
         </LinearLayout>
 
 
-    </com.jiangtai.team.widget.SlideWrapper>
+    </com.jiangtai.count.widget.SlideWrapper>
 
 
 </LinearLayout>

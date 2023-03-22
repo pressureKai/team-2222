@@ -44,7 +44,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:padding="7dp"
+                android:visibility="gone"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/icon_new_delete"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <View
                 android:id="@+id/divider_line_1"

@@ -122,11 +122,11 @@
 
     </RadioGroup>
 
-    <com.jiangtai.team.ui.signIn.viewpager.CustomViewPager
+    <com.jiangtai.count.ui.signIn.viewpager.CustomViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"></com.jiangtai.team.ui.signIn.viewpager.CustomViewPager>
+        android:layout_weight="8"></com.jiangtai.count.ui.signIn.viewpager.CustomViewPager>
 
 
 </LinearLayout>

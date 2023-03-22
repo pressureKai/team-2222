@@ -26,5 +26,8 @@
     <color name="emergency_color">#4DCC0000</color>
     <color name="my_color">#536D8C</color>
 
+    <color name="alpha_color">#BFFF0000</color>
+    <color name="iii">#0000B4</color>
+    <color name="vvv">#0000B4</color>
     <color name="color_gray_757575_alpha">#4D757575</color>
 </resources>

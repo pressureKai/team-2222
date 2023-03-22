@@ -44,7 +44,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:padding="7dp"
+                android:visibility="gone"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/icon_new_delete"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <View
                 android:id="@+id/divider_line_1"
@@ -204,6 +214,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <LinearLayout
+                            android:id="@+id/ll_date"
                             android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -221,17 +232,23 @@
                             <android.support.constraint.ConstraintLayout
                                 android:layout_width="0dp"
                                 android:layout_weight="4"
+                                android:clickable="false"
                                 android:layout_height="wrap_content">
 
                                 <EditText
+                                    android:paddingHorizontal="6dp"
                                     android:id="@+id/et_date"
                                     android:paddingVertical="16dp"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     android:hint="请选择日期"
+                                    android:singleLine="true"
                                     android:layout_width="match_parent"
                                     android:background="@null"
                                     android:textSize="14sp"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
                                     android:textColor="@color/black"
                                     android:layout_height="wrap_content"/>
 

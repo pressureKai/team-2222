@@ -6,46 +6,267 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ok" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0267bb3-4ee5-4528-ab1a-4a68df5f3a6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_flyco_tablayout_FlycoTabLayout_Lib_2_1_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DataShowBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/HelicopterOilInfoBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataListActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_data.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/team.app.unitTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f0267bb3-4ee5-4528-ab1a-4a68df5f3a6e" name="Default Changelist" comment="commit in 20230313">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/DeleteBean.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/EleBean.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/FeelListBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/event/RefreshLocEvent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/adapter/FeelListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/AirDropActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/CarFixActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/CarFixFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/CarNormalActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/CarReadFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/CountMapActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/DataFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/DeviceActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/FeelDetailActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/FeelListActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/HelicopterOilActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/NewSettingActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/OilActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/SearchDataActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/IsSiginUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/AnimatorUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/CircleBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/shape_search_data_round_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_air_drop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_new_delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_new_location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_new_set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shape_search_data_round_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_feel_detail.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_feel_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_setting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_data.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_car_fix.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_car_read.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_feel_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_marker_text.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/jiangtai/team/._ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jiangtai/count/._ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/jiangtai/team/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jiangtai/count/ExampleInstrumentedTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/litepal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/litepal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/application/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/application/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/base/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/base/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/base/BaseBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/base/BaseBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/base/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/base/BaseNoDataBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/base/BaseNoDataBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/base/NewBaseBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/base/NewBaseBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/AirDropInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/AirDropInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/BeiDouReceiveBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/BeiDouReceiveBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/BeiDouSendMessageBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/BeiDouSendMessageBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/BeiDouServiceBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/BeiDouServiceBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/BigDipperPersonVi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/BigDipperPersonVi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CarFixBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/CarFixBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CollectInformationBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/CollectInformationBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/CountRecordBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/CountRecordBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DataShowBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/DataShowBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DeviceFeelInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/DeviceFeelInfoBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DeviceInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/DeviceInfoBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/DipperBig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/DipperBig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/EleBean.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/HelicopterOilInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/HelicopterOilInfoBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/IsTaskBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/IsTaskBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/LocationInfoBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/LocationInfoBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/LocationReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/LocationReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/MajorPracticeBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/MajorPracticeBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/MajorPracticeItemBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/MajorPracticeItemBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/MqttBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/MqttBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/NewLoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/NewLoginBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/NormalPerson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/NormalPerson.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/NormalScore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/NormalScore.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/OilInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/OilInfoBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/Person.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/Person.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/Project.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/ReceiverConfirmIdMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/ReceiverConfirmIdMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/RequestLoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/RequestLoginBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/ResponseData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/ResponseData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/ResponseData2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/ResponseData2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/ReturnBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/ReturnBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/ReturnIsBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/ReturnIsBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/Score.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/Score.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/SendConfirmIdMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/SendConfirmIdMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/SosBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/SosBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/TaskBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/TaskBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/TaskListBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/TaskListBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/TokenBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/TokenBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/UploadDataBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/UploadDataBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/UploadMajorScoreBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/UploadMajorScoreBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/UploadMajorScoreData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/UploadMajorScoreData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WbPerson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/WbPerson.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WbProject.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/WbProject.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WbTaskBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/WbTaskBean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/bean/WeatherInfoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/bean/WeatherInfoBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/constant/Constant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/constant/Constant.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/dialog/ConfirmDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/dialog/ConfirmDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/dialog/LoadingDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/dialog/LoadingDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/dialog/SaveDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/dialog/SaveDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/dialog/ScoreInputDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/dialog/ScoreInputDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/dialog/ScoreInputDialog2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/dialog/ScoreInputDialog2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/dialog/SelectWayDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/dialog/SelectWayDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/event/ClearEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/event/ClearEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/event/RefeshProjectStateEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/event/RefeshProjectStateEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/event/RefreshLocEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/event/RefreshPracticeEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/event/RefreshPracticeEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/event/RefreshScoreStateEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/event/RefreshScoreStateEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/event/RefreshTaskState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/event/RefreshTaskState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ext/Ext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ext/Ext.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/glide/BlurBitmapUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/glide/BlurBitmapUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/glide/GlideBlurformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/glide/GlideBlurformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/glide/GlideCircleTransform.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/glide/GlideCircleTransform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/glide/GlideRoundTransform.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/glide/GlideRoundTransform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/glide/GlideUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/glide/GlideUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/login/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/login/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/Api.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/Api.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/BodyExt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/BodyExt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/CallbackListObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/CallbackListObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/CallbackObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/CallbackObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/MajorApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/MajorApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/MajorRetrofit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/MajorRetrofit.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/MyRetrofit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/MyRetrofit.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/net/ThreadSwitchTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/net/ThreadSwitchTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/request/NormalScoreUploadModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/request/NormalScoreUploadModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/request/ScoreUploadModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/request/ScoreUploadModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/response/TaskDetailModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/response/TaskDetailModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/response/TaskListModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/response/TaskListModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/achievement/AchievementActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/achievement/AchievementActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/achievement/AchievementAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/achievement/AchievementAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/adapter/DialogPeopleListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/adapter/DialogPeopleListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/beidoureceiver/BeiDouReceiverHistoryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/beidoureceiver/BeiDouReceiverHistoryActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/beidoureceiver/BeiDouSendHistoryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/beidoureceiver/BeiDouSendHistoryActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/countMain/CountMainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/countMain/CountMainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/AirDropActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarFixActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/CarNormalActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/DataActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/DataAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DataListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/DataListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/DeviceActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/EnvironmentDataActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/EnvironmentDataActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/HelicopterOilActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/InspectionDataActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/InspectionDataActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/OilActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/data/WeatherActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/data/WeatherActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/login/NewLoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/login/NewLoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpractice/MajorPracticeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpractice/MajorPracticeAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpractice/MajorPracticeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpractice/MajorPracticeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpractice/PoiImport.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpractice/PoiImport.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedaydetail/MajorPracticeDayDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedaydetail/MajorPracticeDayDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedaydetail/MajorPracticeDayDetailAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedaydetail/MajorPracticeDayDetailAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedetail/MajorPracticeDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedetail/MajorPracticeDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedetail/MajorPracticeDetailAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedetail/MajorPracticeDetailAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedetail/MajorPracticeItemDetailAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedetail/MajorPracticeItemDetailAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticepeople/MajorPracticePeopleActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticepeople/MajorPracticePeopleActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticepeople/MajorPracticePeopleAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticepeople/MajorPracticePeopleAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticescore/MajorPracticeScoreActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticescore/MajorPracticeScoreActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/map/MapActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/map/MapActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/map/MapFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/map/MapFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/person/PersonAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/person/PersonAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/person/PersonListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/person/PersonListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/person/PersonScoreDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/person/PersonScoreDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/person/PersonScoreDetailAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/person/PersonScoreDetailAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/practice/PracticeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/practice/PracticeAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/practice/PracticeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/practice/PracticeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/practice/PracticeScoreActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/practice/PracticeScoreActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/practice/PracticeScoreAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/practice/PracticeScoreAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/practiceManager/PracticeManagerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/practiceManager/PracticeManagerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/BeiDouReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/BeiDouReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/BeiDouService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/BeiDouService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/CheckDistanceService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/CheckDistanceService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/SignInEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/SignInEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/SignInService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/SignInService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/SignalReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/SignalReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/receiver/UploadDataService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/receiver/UploadDataService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/returnDate/ReturnDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/returnDate/ReturnDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/setting/SettingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/setting/SettingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/DetailsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/DetailsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/DetailsKqAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/DetailsKqAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/DetailsRwAvtivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/DetailsRwAvtivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/DetailsewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/DetailsewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/IsSiginUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/SignInFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/SignInFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/SigninDetailsAdapterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/SigninDetailsAdapterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/SignlnFragmentUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/SignlnFragmentUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/UpdateSigninActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/UpdateSigninActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/._BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/._BaseFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/._But1Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/._But1Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/._But2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/._But2Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/._ButFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/._ButFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/._CustomViewPager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/._CustomViewPager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/._DetailsywdAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/._DetailsywdAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/BaseFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/But1Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/But1Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/But2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/But2Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/ButFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/ButFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/CustomViewPager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/CustomViewPager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/DetailsywdAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/DetailsywdAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/splash/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/splash/SplashActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/task/MajorProjectActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/task/MajorProjectActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/task/MajorTaskActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/task/MajorTaskActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/task/TaskAllAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/task/TaskAllAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/task/TaskFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/task/TaskFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/taskinfo/TaskFinishedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/taskinfo/TaskFinishedAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/taskinfo/TaskInfoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/taskinfo/TaskInfoActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/taskinfo/TaskPreAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/taskinfo/TaskPreAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/taskinfo/TaskRunningAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/taskinfo/TaskRunningAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/BeiDouUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/BeiDouUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/CommandUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/CommandUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/CommonUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/CommonUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/CrcUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/CrcUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/DateUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/DateUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/DialogHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/DialogHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/FileUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/FileUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/GsonInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/GsonInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/HexUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/HexUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/KeyBoardUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/KeyBoardUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/KeyBoardUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/KeyBoardUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/KeyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/KeyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/LogCatStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/LogCatStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/MD5Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/MineMarkerOptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/MineMarkerOptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/NetWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/NetWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/NotificationHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/NotificationHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/Preference.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/Preference.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/RegexUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/RegexUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/RunnaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/RunnaUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/SharedPreferanceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/SharedPreferanceUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/ShellUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/ShellUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/ToJsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/ToJsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/widget/CustomViewPager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/widget/CustomViewPager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/widget/SlideWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/widget/SlideWrapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_air_drop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_air_drop.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_car_fix.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_car_fix.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_car_normal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_car_normal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_count_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_device.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_device.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_helicopter_oil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_helicopter_oil.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_oil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_oil.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_signin_xingqing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_signin_xingqing.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_practice_manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_practice_manager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_practice_score.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_practice_score.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_task_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_task_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycle_item_practice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycle_item_practice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/._themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jiangtai/team/._ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jiangtai/count/._ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jiangtai/team/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jiangtai/count/ExampleUnitTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,13 +300,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="E:\StudioProjects\1haoshouzhang\newcheliang\vehicle-beta\vehicle.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\Administrator\Desktop\demo\count\team-beta\vehicle.jks" />
     <option name="KEY_ALIAS" value="vehicle" />
     <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
@@ -105,6 +326,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="team.app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Administrator\Desktop\demo\count\team-beta\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="PROJECT_TRUSTED_KEY" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -116,9 +340,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\layout" />
       <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\drawable" />
+      <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\java\com\jiangtai\team\ui\data" />
+      <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\java\com\jiangtai\team\util" />
       <recent name="C:\Users\Administrator\Desktop\demo\count\team-beta\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\Administrator\Desktop\demo\team-beta\app\src\main\res\layout" />
-      <recent name="C:\Users\Administrator\Desktop\demo\team-beta\app\src\main\res\drawable" />
     </key>
     <key name="android.template.275881035">
       <recent name="com.jiangtai.vehicle.login" />
@@ -134,6 +358,7 @@
       <recent name="com.jiangtai.vehicle.ui.returnDate" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.jiangtai.count.ui.data" />
       <recent name="com.jiangtai.team.ui.data" />
       <recent name="com.jiangtai.team.util" />
       <recent name="com.jiangtai.vehicle.ui.receiver" />
@@ -244,48 +469,60 @@
       <option name="presentableId" value="Default" />
       <updated>1635727260880</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit in 20230313">
+      <created>1678701332606</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678701332606</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit in 20230313" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit in 20230313" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/taskinfo/TaskInfoActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/taskinfo/TaskInfoActivity.kt</url>
           <line>320</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/taskinfo/TaskInfoActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/taskinfo/TaskInfoActivity.kt</url>
           <line>337</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/util/DialogHelper.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/util/DialogHelper.kt</url>
           <line>407</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedetail/MajorPracticeDetailActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedetail/MajorPracticeDetailActivity.kt</url>
           <line>445</line>
           <option name="timeStamp" value="186" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/majorpracticedetail/MajorPracticeDetailActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/majorpracticedetail/MajorPracticeDetailActivity.kt</url>
           <line>393</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/returnDate/ReturnDate.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/returnDate/ReturnDate.java</url>
           <line>82</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/ui/signIn/viewpager/ButFragment.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/ui/signIn/viewpager/ButFragment.java</url>
           <line>20</line>
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/team/login/LoginActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/jiangtai/count/login/LoginActivity.java</url>
           <line>134</line>
           <option name="timeStamp" value="184" />
         </line-breakpoint>

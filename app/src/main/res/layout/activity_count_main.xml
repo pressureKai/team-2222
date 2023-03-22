@@ -249,12 +249,26 @@
 
 
                     <LinearLayout
-                        android:visibility="invisible"
+                        android:id="@+id/ll_feel_layout"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+
+                        <ImageView
+                            android:src="@drawable/icon_weather_main"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="目标感知记录"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 

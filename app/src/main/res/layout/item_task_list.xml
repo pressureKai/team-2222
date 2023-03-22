@@ -13,7 +13,7 @@
             app:cardElevation="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <com.jiangtai.team.widget.SlideWrapper
+            <com.jiangtai.count.widget.SlideWrapper
                 android:id="@+id/slide"
                 sw:mode="dynamic"
                 sw:anim_duration="300"
@@ -154,7 +154,7 @@
 
                 </android.support.constraint.ConstraintLayout>
 
-            </com.jiangtai.team.widget.SlideWrapper>
+            </com.jiangtai.count.widget.SlideWrapper>
 
         </android.support.v7.widget.CardView>
 

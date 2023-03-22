@@ -1,0 +1,7 @@
+package com.jiangtai.count.event
+
+/**
+ * Created by heCunCun on 2021/3/16
+ */
+class RefreshPracticeEvent {
+}

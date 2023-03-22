@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.jiangtai.team">
+    package="com.jiangtai.count">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许程序挂载和反挂载文件系统可移动存储 -->
@@ -38,7 +38,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".application.App"
+        android:name="com.jiangtai.count.application.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -46,20 +46,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Training">
 
-        <activity android:name=".ui.signIn.DetailsRwAvtivity" />
-        <activity android:name=".ui.signIn.SigninDetailsAdapterActivity" />
-        <activity android:name=".ui.signIn.UpdateSigninActivity" />
-        <activity android:name=".ui.returnDate.ReturnDate" />
+        <activity android:name="com.jiangtai.count.ui.signIn.DetailsRwAvtivity" />
+        <activity android:name="com.jiangtai.count.ui.signIn.SigninDetailsAdapterActivity" />
+        <activity android:name="com.jiangtai.count.ui.signIn.UpdateSigninActivity" />
+        <activity android:name="com.jiangtai.count.ui.returnDate.ReturnDate" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="ef86b238293a2014d4ef9235dcb8104e" /> <!-- 地图CLD服务器 -->
+            android:value="013e4a698beb8be6d84a91b3d7a15898" /> <!-- 地图CLD服务器 -->
         <meta-data
             android:name="com.cld.lbsapi.API_KEY"
             android:value="c78460b2cc0v317bd346bc3f" />
 
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name="com.jiangtai.count.ui.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -68,70 +68,75 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity" />
+        <activity android:name="com.jiangtai.count.login.LoginActivity" />
         <activity
-            android:name=".ui.taskinfo.TaskInfoActivity"
+            android:name="com.jiangtai.count.ui.taskinfo.TaskInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.achievement.AchievementActivity"
+            android:name="com.jiangtai.count.ui.achievement.AchievementActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.person.PersonListActivity"
+            android:name="com.jiangtai.count.ui.person.PersonListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.person.PersonScoreDetailActivity"
+            android:name="com.jiangtai.count.ui.person.PersonScoreDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name="com.jiangtai.count.ui.main.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.practice.PracticeScoreActivity"
+            android:name="com.jiangtai.count.ui.practice.PracticeScoreActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.map.MapActivity"
+            android:name="com.jiangtai.count.ui.map.MapActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.majorpracticedetail.MajorPracticeDetailActivity"
+            android:name="com.jiangtai.count.ui.majorpracticedetail.MajorPracticeDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.majorpracticepeople.MajorPracticePeopleActivity"
+            android:name="com.jiangtai.count.ui.majorpracticepeople.MajorPracticePeopleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.majorpracticescore.MajorPracticeScoreActivity"
+            android:name="com.jiangtai.count.ui.majorpracticescore.MajorPracticeScoreActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.majorpracticedaydetail.MajorPracticeDayDetailActivity"
+            android:name="com.jiangtai.count.ui.majorpracticedaydetail.MajorPracticeDayDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.task.MajorTaskActivity"
+            android:name="com.jiangtai.count.ui.task.MajorTaskActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.task.MajorProjectActivity"
+            android:name="com.jiangtai.count.ui.task.MajorProjectActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.beidoureceiver.BeiDouReceiverHistoryActivity"
+            android:name="com.jiangtai.count.ui.beidoureceiver.BeiDouReceiverHistoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.beidoureceiver.BeiDouSendHistoryActivity"
+            android:name="com.jiangtai.count.ui.beidoureceiver.BeiDouSendHistoryActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.amap.api.maps.offlinemap.OfflineMapActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.data.DataActivity" />
-        <activity android:name=".ui.data.EnvironmentDataActivity" />
-        <activity android:name=".ui.data.InspectionDataActivity" />
-        <activity android:name=".ui.login.NewLoginActivity" />
-        <activity android:name=".ui.countMain.CountMainActivity"
+        <activity android:name="com.jiangtai.count.ui.data.DataActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.EnvironmentDataActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.InspectionDataActivity" />
+        <activity android:name="com.jiangtai.count.ui.login.NewLoginActivity" />
+        <activity android:name="com.jiangtai.count.ui.countMain.CountMainActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".ui.data.OilActivity" />
-        <activity android:name=".ui.data.HelicopterOilActivity" />
-        <activity android:name=".ui.data.CarNormalActivity" />
-        <activity android:name=".ui.data.CarFixActivity" />
-        <activity android:name=".ui.data.AirDropActivity" />
-        <activity android:name=".ui.data.DeviceActivity" />
-        <activity android:name=".ui.data.WeatherActivity" />
-        <activity android:name=".ui.data.DataListActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.OilActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.HelicopterOilActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.CarNormalActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.CarFixActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.AirDropActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.DeviceActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.WeatherActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.DataListActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.SearchDataActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.NewSettingActivity" />
+        <activity android:name="com.jiangtai.count.ui.data.CountMapActivity" />
+        <activity android:name=".ui.data.FeelListActivity" />
+        <activity android:name=".ui.data.FeelDetailActivity" />
 
         <meta-data
             android:name="design_width_in_dp"
@@ -140,21 +145,21 @@
             android:name="design_height_in_dp"
             android:value="780" />
 
-        <receiver android:name=".ui.receiver.SignalReceiver">
+        <receiver android:name="com.jiangtai.count.ui.receiver.SignalReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.narrowband_info" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".ui.receiver.BeiDouReceiver">
+        <receiver android:name="com.jiangtai.count.ui.receiver.BeiDouReceiver">
             <intent-filter>
                 <action android:name="nci.hq.bd.service.RevSend" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".ui.receiver.BeiDouService" />
-        <service android:name=".ui.receiver.CheckDistanceService" />
-        <service android:name=".ui.receiver.SignInService" />
-        <service android:name=".ui.receiver.UploadDataService" />
+        <service android:name="com.jiangtai.count.ui.receiver.BeiDouService" />
+        <service android:name="com.jiangtai.count.ui.receiver.CheckDistanceService" />
+        <service android:name="com.jiangtai.count.ui.receiver.SignInService" />
+        <service android:name="com.jiangtai.count.ui.receiver.UploadDataService" />
     </application>
 
 </manifest>
