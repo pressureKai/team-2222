@@ -8,29 +8,23 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import android.view.ViewGroup
-import android.widget.TextView
 import com.amap.api.location.AMapLocation
 import com.amap.api.location.AMapLocationClient
 import com.amap.api.location.AMapLocationClientOption
 import com.amap.api.location.AMapLocationListener
-import com.amap.api.maps.*
+import com.amap.api.maps.AMap
+import com.amap.api.maps.CameraUpdateFactory
 import com.amap.api.maps.model.*
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
-import com.jiangtai.count.bean.FeelListBean
 import com.jiangtai.count.util.AnimatorUtil
 import com.jiangtai.count.util.CircleBuilder
-import kotlinx.android.synthetic.main.activity_feel_detail.*
-import kotlinx.android.synthetic.main.activity_feel_detail.iv_back
-import java.text.SimpleDateFormat
-import java.util.*
+import kotlinx.android.synthetic.main.activity_count_map.*
 import java.util.concurrent.ConcurrentHashMap
-import kotlin.collections.ArrayList
+import kotlin.random.Random
 
 
-class FeelDetailActivity : BaseActivity(), AMapLocationListener {
+class CountMapActivity : BaseActivity(), AMapLocationListener {
     private var aMap: AMap? = null
     private var circleRadius = 1000
     private val airDropMap: ConcurrentHashMap<Marker, String> = ConcurrentHashMap()
@@ -40,7 +34,7 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
 
     private var isFirstMoveForLocation = false
     override fun attachLayoutRes(): Int {
-        return R.layout.activity_feel_detail
+        return R.layout.activity_count_map
     }
 
 
@@ -57,26 +51,8 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
     override fun initView() {
         initImmersionBar(dark = true)
         aMap = mapView.map
-        aMap?.uiSettings?.zoomPosition = AMapOptions.ZOOM_POSITION_RIGHT_CENTER
         aMap?.mapType = AMap.MAP_TYPE_NORMAL
 
-
-        val feelListBean = intent.getParcelableExtra<FeelListBean>("result")
-
-        if(feelListBean != null){
-            top_latitude.text = feelListBean.topLatitude.toString()
-            bottom_latitude.text = feelListBean.bottomLatitude.toString()
-            top_longitude.text  =  feelListBean.topLongitude.toString()
-            bottom_longitude.text = feelListBean.bottomLongitude.toString()
-            try {
-                val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd hh:mm")
-                val format = simpleDateFormat.format(Date(feelListBean.time.toLong()))
-                find_time.text  = format
-            }catch (e:Exception){
-                find_time.text  =  ""
-            }
-            createRectangle(feelListBean)
-        }
         var locationStyle: MyLocationStyle? = null
         locationStyle = MyLocationStyle();//初始化定位蓝点样式
         locationStyle.interval(2000);//设置连续定位模式下的的定位间隔，值在连续定位模式下生效，单次定位模式下不会生效。单位为毫秒
@@ -94,11 +70,24 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
         locationLatLng = LatLng(
             0.toDouble(), 0.toDouble()
         )
-        //addWaveAnimation(locationLatLng, aMap)
+        addWaveAnimation(locationLatLng, aMap)
         aMap?.uiSettings?.isScaleControlsEnabled = true
+        aMap?.moveCamera(CameraUpdateFactory.changeLatLng(locationLatLng))
 
+        aMap?.let {
+            it.addOnMarkerClickListener { marker ->
+                val s = airDropMap[marker]
+                val intent = Intent(this,AirDropActivity::class.java)
+                intent.putExtra("info",s)
+                startActivity(intent)
+                true
+            }
+        }
 
-
+        cl_input.setOnClickListener {
+            val intent = Intent(this,AirDropActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun initListener() {
@@ -167,13 +156,40 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
     }
 
 
+    private fun test() {
+        for (i in 1..15) {
+            if(i != 0){
+                val randomLat = Random.nextInt(i) * 0.001
+                val randomLng = Random.nextInt(i) * 0.001
 
-    private fun addMarker(center: LatLng,feelListBean: FeelListBean) {
-        val inflate = ViewGroup.inflate(this, R.layout.item_marker_text, null)
-        val tvDes = inflate.findViewById<TextView>(R.id.tv_des)
-        tvDes.text = feelListBean.type + "发现目标"+ feelListBean.targetType
-        val icon = MarkerOptions().position(center).icon(BitmapDescriptorFactory.fromView(inflate))
-        aMap?.addMarker(icon)
+                locationLatLng?.let {
+                    val newLatitude = it.latitude - randomLat
+                    val newLongitude = it.longitude - randomLng
+
+
+                    val latLng = LatLng(newLatitude, newLongitude)
+                    addMarker(latLng,System.currentTimeMillis().toString())
+
+                }
+            }
+
+        }
+    }
+
+
+    /**
+     * @param deviceId 物资编号
+     */
+    private fun addMarker(center: LatLng, deviceId: String) {
+        val uploadMarkerOptions =
+            MarkerOptions().position(center)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_air_drop))
+        val marker = aMap?.addMarker(uploadMarkerOptions)
+        val s =
+            center.latitude.toString() + ":" + center.longitude.toString() + ":" + deviceId
+        marker?.let {
+            airDropMap.put(marker,s)
+        }
     }
 
 
@@ -253,10 +269,10 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
             locationLatLng = LatLng(latitude, longitude)
             Handler(Looper.getMainLooper()).postDelayed({
                 removeCircleWave()
-             //   addWaveAnimation(locationLatLng, aMap)
-             //   test()
+                addWaveAnimation(locationLatLng, aMap)
+                test()
                 if (!isFirstMoveForLocation) {
-             //       aMap?.moveCamera(CameraUpdateFactory.changeLatLng(locationLatLng))
+                    aMap?.moveCamera(CameraUpdateFactory.changeLatLng(locationLatLng))
                     isFirstMoveForLocation = true
                 }
             }, 2000)
@@ -274,65 +290,6 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
             }
         }
     }
-    private fun createRectangle(
-        feelListBean: FeelListBean
-    ) {
-        val latLngs: MutableList<LatLng> = ArrayList()
 
-        val leftLatLng = LatLng(feelListBean.topLatitude, feelListBean.topLongitude)
-        val rightLatLng = LatLng(feelListBean.topLatitude, feelListBean.bottomLongitude)
-        val rightBottomLatLng = LatLng(feelListBean.bottomLatitude, feelListBean.bottomLongitude)
-        val leftBottomLatLng = LatLng(feelListBean.bottomLatitude, feelListBean.topLongitude)
-        latLngs.add(leftLatLng)
-        latLngs.add(rightLatLng)
-        latLngs.add(rightBottomLatLng)
-        latLngs.add(leftBottomLatLng)
-
-        aMap!!.addPolygon(
-            PolygonOptions()
-                .addAll(latLngs)
-                .fillColor(resources.getColor(R.color.alpha_color)).strokeWidth(0f)
-        )
-
-
-
-        val calculateLineDistance = AMapUtils.calculateLineDistance(leftLatLng, rightBottomLatLng)
-        val centerLatitude = (feelListBean.topLatitude + feelListBean.bottomLatitude) / 2
-        val centerLongitude = (feelListBean.topLongitude + feelListBean.bottomLongitude) / 2
-        val mapCenterPoint = LatLng(centerLatitude,centerLongitude)
-
-
-
-        addMarker(LatLng(feelListBean.bottomLatitude - 0.1,(feelListBean.bottomLongitude + feelListBean.topLongitude)/ 2),feelListBean)
-        Log.e("calculateLineDistance","calculateLineDistance is $calculateLineDistance")
-        mapCenterPoint.let {
-            //146090.9
-            var zoom = 17f
-            if(calculateLineDistance < 500){
-                zoom = 17f
-            } else if(calculateLineDistance > 500 && calculateLineDistance < 5000){
-                zoom = 12f
-            } else if(calculateLineDistance > 5000 && calculateLineDistance < 30000){
-                zoom = 9f
-            } else if(calculateLineDistance > 30000 && calculateLineDistance < 50000){
-                zoom = 8f
-            } else if(calculateLineDistance > 50000 && calculateLineDistance < 100000){
-                zoom = 7f
-            }else if(calculateLineDistance > 100000 && calculateLineDistance < 200000){
-                zoom = 6f
-            }else if(calculateLineDistance > 200000 && calculateLineDistance < 500000){
-                zoom = 5f
-            }else if(calculateLineDistance > 1000000){
-                zoom = 3f
-            }
-
-
-            Handler(Looper.getMainLooper()).postDelayed({
-                aMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(it,zoom))
-            },2000)
-
-        }
-
-    }
 
 }
