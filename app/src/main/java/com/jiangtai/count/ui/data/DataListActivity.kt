@@ -11,6 +11,7 @@ import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
 import com.jiangtai.count.bean.CountRecordBean
 import com.jiangtai.count.bean.DeleteBean
+import com.jiangtai.count.bean.TransformInfo
 import com.jiangtai.count.constant.Constant
 import com.jiangtai.count.ui.countMain.CountMainActivity
 import com.jiangtai.count.util.Preference
@@ -42,7 +43,8 @@ class DataListActivity :BaseActivity(){
         "YL日清",
         "气象信息",
         "直升机加油",
-        "空投物质采集"
+        "空投物质采集",
+        "调试日志"
     )
 
 
@@ -53,7 +55,8 @@ class DataListActivity :BaseActivity(){
         CountRecordBean.OIL_TYPE,
         CountRecordBean.WEATHER_TYPE,
         CountRecordBean.HELICOPTER_OIL_TYPE,
-        CountRecordBean.AIR_TYPE
+        CountRecordBean.AIR_TYPE,
+        TransformInfo.LOG_DATA
     )
 
 
@@ -100,7 +103,12 @@ class DataListActivity :BaseActivity(){
 
 
         typeList.forEach {
-            fragments.add(DataFragment(it))
+            if(it != TransformInfo.LOG_DATA){
+                fragments.add(DataFragment(it))
+            } else {
+                fragments.add(LogDataFragment(it))
+            }
+
         }
 
 

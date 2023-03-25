@@ -128,6 +128,10 @@ class CountMainActivity : BaseActivity() {
         ll_feel_layout.setOnClickListener {
            startActivity(Intent(this@CountMainActivity,FeelListActivity::class.java))
         }
+
+        ll_test.setOnClickListener {
+            startActivity(Intent(this@CountMainActivity,ManagerTestActivity::class.java))
+        }
     }
 
     override fun initListener() {

@@ -274,6 +274,116 @@
 
                 </LinearLayout>
 
+
+
+
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_test"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:src="@drawable/icon_weather_main"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="网关测试"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:src="@drawable/icon_weather_main"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="空投物质采集"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+
+                        <ImageView
+                            android:src="@drawable/icon_weather_main"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="设施采集"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:src="@drawable/icon_weather_main"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="目标感知记录"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </android.support.constraint.ConstraintLayout>

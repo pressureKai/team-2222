@@ -2,6 +2,8 @@ package com.jiangtai.count.ui.data
 
 import android.view.View
 import android.widget.EditText
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder
+import com.bigkoo.pickerview.view.OptionsPickerView
 import com.blankj.utilcode.util.ToastUtils
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
@@ -9,11 +11,13 @@ import com.jiangtai.count.bean.CountRecordBean
 import com.jiangtai.count.bean.DeleteBean
 import com.jiangtai.count.bean.HelicopterOilInfoBean
 import com.jiangtai.count.util.CommonUtil
+import kotlinx.android.synthetic.main.activity_car_normal.*
 import kotlinx.android.synthetic.main.activity_helicopter_oil.*
 import kotlinx.android.synthetic.main.activity_helicopter_oil.bt_commit
 import kotlinx.android.synthetic.main.activity_helicopter_oil.et_notice
 import kotlinx.android.synthetic.main.activity_helicopter_oil.et_number
 import kotlinx.android.synthetic.main.activity_helicopter_oil.et_time
+import kotlinx.android.synthetic.main.activity_helicopter_oil.et_type
 import kotlinx.android.synthetic.main.activity_helicopter_oil.iv_back
 import kotlinx.android.synthetic.main.activity_helicopter_oil.iv_delete
 import org.greenrobot.eventbus.EventBus
@@ -21,6 +25,34 @@ import org.litepal.LitePal
 
 class HelicopterOilActivity : BaseActivity() {
     private var isUpdate = false
+    private var additive = false
+
+
+//    一、液体燃料
+//    汽油
+//    柴油
+//    航空煤油
+//    重质燃料油
+//    二、润滑油
+//    汽油机润滑油（简称汽油机油）
+//    柴油机润滑油（简称柴油机油）
+//    航空涡轮发动机润滑油
+//    汽轮机润滑油
+//    齿轮油
+//    压缩机油
+//    仪表油
+//    军械防锈油
+//    三、润滑脂
+//    军用汽车通用润滑脂
+//    2号坦克润滑脂
+//    ×03/H多效锂基润滑脂
+//    各类航空润滑脂
+//    四、特种液
+//    冷却液
+//    制动液
+//    防冰液
+
+    private var oilTypeList :ArrayList<String> = ArrayList()
     override fun attachLayoutRes(): Int {
         return R.layout.activity_helicopter_oil
     }
@@ -31,6 +63,24 @@ class HelicopterOilActivity : BaseActivity() {
 
     override fun initView() {
         initImmersionBar(dark = true)
+
+        oilTypeList.add("汽油")
+        oilTypeList.add("柴油")
+        oilTypeList.add("航空煤油")
+        oilTypeList.add("重质燃料油")
+        oilTypeList.add("汽油机润滑油")
+        oilTypeList.add("齿轮油")
+        oilTypeList.add("压缩机油")
+        oilTypeList.add("仪表油")
+        oilTypeList.add("军械防锈油")
+        oilTypeList.add("军用汽车通用润滑脂")
+        oilTypeList.add("2号坦克润滑脂")
+        oilTypeList.add("03/H多效锂基润滑脂")
+        oilTypeList.add("冷却液")
+        oilTypeList.add("制动液")
+        oilTypeList.add("防冰液")
+        oilTypeList.add("其他")
+
         iv_back.setOnClickListener {
             finish()
         }
@@ -62,6 +112,28 @@ class HelicopterOilActivity : BaseActivity() {
                 ToastUtils.showShort("找不到该记录!")
             }
         }
+
+
+
+        tv_none.setOnClickListener {
+            additive = false
+            tv_none.setBackgroundResource(R.drawable.shape_white_round_stroke_blue)
+            tv_have.setBackgroundResource(R.drawable.shape_white_round_stroke_gray)
+
+        }
+
+        tv_have.setOnClickListener {
+            additive = true
+            tv_have.setBackgroundResource(R.drawable.shape_white_round_stroke_blue)
+            tv_none.setBackgroundResource(R.drawable.shape_white_round_stroke_gray)
+        }
+        et_type.setOnClickListener {
+            showPicker(oilTypeList,"y料类型",et_type,{
+
+            })
+        }
+
+
         reShowData()
     }
 
@@ -112,7 +184,7 @@ class HelicopterOilActivity : BaseActivity() {
                 helicopterOilInfoBean.yppph = sBrandNumber
                 helicopterOilInfoBean.ypcd = sPurity
                 helicopterOilInfoBean.yphsl = sOilWater
-                helicopterOilInfoBean.tjj = "无"
+                helicopterOilInfoBean.tjj = if(additive) "有" else "无"
                 helicopterOilInfoBean.bz = sNotice
                 helicopterOilInfoBean.jyy = sOilPerson
                 helicopterOilInfoBean.jz = sOilCaptain
@@ -245,5 +317,31 @@ class HelicopterOilActivity : BaseActivity() {
         } else {
             true
         }
+    }
+
+
+    private fun showPicker(data:ArrayList<String>,title:String,editText: EditText,callback:(s:String)->Unit) {
+
+        //显示选择框
+        val pvOptions: OptionsPickerView<String> = OptionsPickerBuilder(this) { options1, option2, options3, v -> //返回的分别是三个级别的选中位置
+            callback(data[options1])
+            editText.setText(data[options1])
+        }.build<String>()
+
+
+        //当前选中下标
+        var currentIndex = 0
+
+        val s = editText.text.toString()
+        data.forEachIndexed { index, d ->
+            if(d == s){
+                currentIndex = index
+            }
+        }
+
+        pvOptions.setSelectOptions(currentIndex)
+        pvOptions.setPicker(data)
+        pvOptions.setTitleText(title)
+        pvOptions.show()
     }
 }

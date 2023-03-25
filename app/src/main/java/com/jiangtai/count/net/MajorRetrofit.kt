@@ -6,6 +6,7 @@ import com.jiangtai.count.util.Preference
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
+import okhttp3.logging.CustomHttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -23,7 +24,7 @@ class MajorRetrofit private constructor() {
     val api: MajorApi
     private fun genericClient(): OkHttpClient {
         val loggingInterceptor =
-            HttpLoggingInterceptor() //该拦截器用于记录应用中的网络请求的信息
+            CustomHttpLoggingInterceptor() //该拦截器用于记录应用中的网络请求的信息
         /**
          * 可以通过 setLevel 改变日志级别
          * 共包含四个级别：NONE、BASIC、HEADER、BODY
@@ -46,7 +47,7 @@ class MajorRetrofit private constructor() {
          *
          * BODY 请求/响应行 + 头 + 体
          */
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        loggingInterceptor.setLevel(CustomHttpLoggingInterceptor.Level.BODY)
         return OkHttpClient.Builder()
             .connectTimeout(
                 DEFAULT_TIME_OUT.toLong(),
@@ -62,7 +63,8 @@ class MajorRetrofit private constructor() {
             )
             .retryOnConnectionFailure(true) //失败后，是否重新连接，
             //启用Log日志
-            .addInterceptor(loggingInterceptor) //添加拦截器  拦截器拿到了request之后，可以对request进行重写，可以添加，移除，替换请求头，也能对response的header进行重写，改变response的body
+
+            //添加拦截器  拦截器拿到了request之后，可以对request进行重写，可以添加，移除，替换请求头，也能对response的header进行重写，改变response的body
             .addInterceptor(object : Interceptor {
                 @Throws(IOException::class)
                 override fun intercept(chain: Interceptor.Chain): Response {
@@ -86,6 +88,7 @@ class MajorRetrofit private constructor() {
                     return chain.proceed(request)
                 }
             })
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 

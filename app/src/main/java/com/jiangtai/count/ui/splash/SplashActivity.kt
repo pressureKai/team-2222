@@ -62,13 +62,12 @@ class SplashActivity : BaseActivity() {
         }
         val sha1 = KeyUtil.getSHA1(this)
         Log.e("SHA", "SHA1=====>$sha1")
-
-
     }
 
     private fun startCountDownTimer() {
         countDownTimer = object : CountDownTimer(timeCountInMilliSeconds, 1000) {
             override fun onTick(millisUntilFinished: Long) {
+
             }
 
             override fun onFinish() {
