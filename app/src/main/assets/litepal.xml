@@ -12,7 +12,7 @@
        定义数据库的版本。
        每次你想要升级数据库，修改映射标记中定义的版本值+ 1，数据库升级将会被自动处理。
        -->
-    <version value="27" />
+    <version value="33" />
 
     <!--
         用映射标签指定的modle在表中定义数据模型.
@@ -47,26 +47,10 @@
         <mapping class="com.jiangtai.count.bean.TransformInfo"/>
 
 
-<!--        <mapping class="com.cetc.serivcebeidou.entity.BeiDouReceiverEntity" />-->
-<!--        <mapping class="com.cetc.serivcebeidou.entity.BeiDouSendMessageEntity" />-->
-<!--        <mapping class="com.cetc.serivcebeidou.entity.LastMessageIDDownloadEntity"/>-->
-<!--        <mapping class="com.cetc.serivcebeidou.entity.MessageIDDownloadReceiverListEntity"/>-->
     </list>
 
-    <!--
-           keep ：按类和字段名大小写作为表名和列名
-           upper ：将所有的类和字段名称以大写的方式作为表明和列名。
-           lower ：将所有的类和字段名称以小写的方式作为表明和列名。
-       -->
+
     <cases value="keep"></cases>
-    <!--
-      定义.db文件的位置。
-      "internal"表示.db文件将存储在内部存储的数据库文件夹中，没有人可以访问,默认设置。。其实就是在本应用包名下新建数据库databases/xxx.db
-      "external"表示.db文件将存储在主外部存储设备上的目录路径中，应用程序可以在该路径中放置它所拥有的每个人都可以访问的持久文件。就是外存
-      也可以自定义:
-      For example:
-      下面路径即为 /storage/emulated/0/lhzw/bluetooth/db/YeWan.db  就是SD卡上的位置
-      -->
-    <!--<storage value="lhzw/bluetooth/db" />-->
+
     <storage value="internal" />
 </litepal>

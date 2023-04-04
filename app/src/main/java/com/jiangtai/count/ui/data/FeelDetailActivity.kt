@@ -64,10 +64,10 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
         val feelListBean = intent.getParcelableExtra<FeelListBean>("result")
 
         if(feelListBean != null){
-            top_latitude.text = feelListBean.topLatitude.toString()
-            bottom_latitude.text = feelListBean.bottomLatitude.toString()
-            top_longitude.text  =  feelListBean.topLongitude.toString()
-            bottom_longitude.text = feelListBean.bottomLongitude.toString()
+            top_latitude.text = feelListBean.wdmin.toString()
+            bottom_latitude.text = feelListBean.wdmax.toString()
+            top_longitude.text  =  feelListBean.jdmin.toString()
+            bottom_longitude.text = feelListBean.jdmax.toString()
             try {
                 val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd hh:mm")
                 val format = simpleDateFormat.format(Date(feelListBean.time.toLong()))
@@ -171,7 +171,7 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
     private fun addMarker(center: LatLng,feelListBean: FeelListBean) {
         val inflate = ViewGroup.inflate(this, R.layout.item_marker_text, null)
         val tvDes = inflate.findViewById<TextView>(R.id.tv_des)
-        tvDes.text = feelListBean.type + "发现目标"+ feelListBean.targetType
+        tvDes.text = feelListBean.mblb + "发现目标"+ feelListBean.fxmb
         val icon = MarkerOptions().position(center).icon(BitmapDescriptorFactory.fromView(inflate))
         aMap?.addMarker(icon)
     }
@@ -279,10 +279,10 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
     ) {
         val latLngs: MutableList<LatLng> = ArrayList()
 
-        val leftLatLng = LatLng(feelListBean.topLatitude, feelListBean.topLongitude)
-        val rightLatLng = LatLng(feelListBean.topLatitude, feelListBean.bottomLongitude)
-        val rightBottomLatLng = LatLng(feelListBean.bottomLatitude, feelListBean.bottomLongitude)
-        val leftBottomLatLng = LatLng(feelListBean.bottomLatitude, feelListBean.topLongitude)
+        val leftLatLng = LatLng(feelListBean.wdmin, feelListBean.jdmin)
+        val rightLatLng = LatLng(feelListBean.wdmin, feelListBean.jdmax)
+        val rightBottomLatLng = LatLng(feelListBean.wdmax, feelListBean.jdmax)
+        val leftBottomLatLng = LatLng(feelListBean.wdmax, feelListBean.jdmin)
         latLngs.add(leftLatLng)
         latLngs.add(rightLatLng)
         latLngs.add(rightBottomLatLng)
@@ -297,13 +297,13 @@ class FeelDetailActivity : BaseActivity(), AMapLocationListener {
 
 
         val calculateLineDistance = AMapUtils.calculateLineDistance(leftLatLng, rightBottomLatLng)
-        val centerLatitude = (feelListBean.topLatitude + feelListBean.bottomLatitude) / 2
-        val centerLongitude = (feelListBean.topLongitude + feelListBean.bottomLongitude) / 2
+        val centerLatitude = (feelListBean.wdmin + feelListBean.wdmax) / 2
+        val centerLongitude = (feelListBean.jdmin + feelListBean.jdmax) / 2
         val mapCenterPoint = LatLng(centerLatitude,centerLongitude)
 
 
 
-        addMarker(LatLng(feelListBean.bottomLatitude - 0.1,(feelListBean.bottomLongitude + feelListBean.topLongitude)/ 2),feelListBean)
+        addMarker(LatLng(feelListBean.wdmax - 0.1,(feelListBean.jdmax + feelListBean.jdmin)/ 2),feelListBean)
         Log.e("calculateLineDistance","calculateLineDistance is $calculateLineDistance")
         mapCenterPoint.let {
             //146090.9

@@ -309,7 +309,7 @@
 
 
                     <LinearLayout
-                        android:visibility="invisible"
+                        android:id="@+id/ll_main"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
@@ -325,7 +325,7 @@
                         <TextView
                             android:gravity="center"
                             android:layout_marginTop="6dp"
-                            android:text="空投物质采集"
+                            android:text="资源分配"
                             android:textColor="@color/black"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>

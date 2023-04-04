@@ -431,6 +431,48 @@
                                 android:gravity="center"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
+                                android:text="维修内容"
+                                android:textSize="14sp"
+                                android:layout_height="wrap_content"/>
+
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="4"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:paddingHorizontal="6dp"
+                                    android:id="@+id/et_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:gravity="start"
+                                    android:hint="请输入维修内容"
+                                    android:lines="4"
+                                    android:paddingVertical="16dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    tools:layout_editor_absoluteX="0dp" />
+
+
+                            </android.support.constraint.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:gravity="center"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:text="维修备注"
                                 android:textSize="14sp"
                                 android:layout_height="wrap_content"/>

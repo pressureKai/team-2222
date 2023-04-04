@@ -19,52 +19,52 @@ public class DeviceFeelInfoBean  extends LitePalSupport {
     private String recordID;
     private String recordTime;
 
-    private String SSBH;
-    private String QWXX;
-    private String WD;
-    private String SJSJ;
-    private String SSLB;
-    private String BZ;
+    private String ssbh;
+    private String qwxx;
+    private String wd;
+    private String sjsj;
+    private String sslb;
+    private String bz;
 
 
-    public String getBZ() {
-        return BZ;
+    public String getBz() {
+        return bz;
     }
 
-    public void setBZ(String BZ) {
-        this.BZ = BZ;
+    public void setBz(String bz) {
+        this.bz = bz;
     }
 
-    public String getSSBH() {
-        return SSBH;
+    public String getSsbh() {
+        return ssbh;
     }
 
-    public void setSSBH(String SSBH) {
-        this.SSBH = SSBH;
+    public void setSsbh(String ssbh) {
+        this.ssbh = ssbh;
     }
 
-    public String getQWXX() {
-        return QWXX;
+    public String getQwxx() {
+        return qwxx;
     }
 
-    public void setQWXX(String QWXX) {
-        this.QWXX = QWXX;
+    public void setQwxx(String qwxx) {
+        this.qwxx = qwxx;
     }
 
-    public String getWD() {
-        return WD;
+    public String getWd() {
+        return wd;
     }
 
-    public void setWD(String WD) {
-        this.WD = WD;
+    public void setWd(String wd) {
+        this.wd = wd;
     }
 
-    public String getSJSJ() {
-        return SJSJ;
+    public String getSjsj() {
+        return sjsj;
     }
 
-    public void setSJSJ(String SJSJ) {
-        this.SJSJ = SJSJ;
+    public void setSjsj(String sjsj) {
+        this.sjsj = sjsj;
     }
 
     public String getRecordID() {
@@ -93,12 +93,12 @@ public class DeviceFeelInfoBean  extends LitePalSupport {
     }
 
 
-    public String getSSLB() {
-        return SSLB;
+    public String getSslb() {
+        return sslb;
     }
 
-    public void setSSLB(String SSLB) {
-        this.SSLB = SSLB;
+    public void setSslb(String sslb) {
+        this.sslb = sslb;
     }
 
     public boolean save(Boolean isUpdate) {

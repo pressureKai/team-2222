@@ -2,19 +2,26 @@ package com.jiangtai.count.ui.data
 
 import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
-import android.view.View
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.listener.OnItemClickListener
+import com.blankj.utilcode.util.ToastUtils
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
+import com.jiangtai.count.base.NewBaseBean
 import com.jiangtai.count.bean.FeelListBean
+import com.jiangtai.count.constant.Constant
+import com.jiangtai.count.net.CallbackListObserver
+import com.jiangtai.count.net.MyRetrofit
+import com.jiangtai.count.net.ThreadSwitchTransformer
 import com.jiangtai.count.ui.adapter.FeelListAdapter
+import com.jiangtai.count.util.Preference
+import dismissLoading
 import kotlinx.android.synthetic.main.activity_feel_list.*
+import showLoading
 import java.util.*
 import kotlin.collections.ArrayList
 
 class FeelListActivity : BaseActivity() {
 
+    private var loginUserId: String by Preference(Constant.LOGIN_USER_ID, "")
 
     override fun attachLayoutRes(): Int {
         return R.layout.activity_feel_list
@@ -37,7 +44,33 @@ class FeelListActivity : BaseActivity() {
         iv_back.setOnClickListener {
             finish()
         }
-        test()
+        getFeelListFromServer()
+       // test()
+    }
+
+
+    private fun getFeelListFromServer(){
+        showLoading()
+        val taskList = MyRetrofit.instance.api.getTargetList(loginUserId)
+        taskList.compose(ThreadSwitchTransformer())
+            .subscribe(object : CallbackListObserver<NewBaseBean<kotlin.collections.List<FeelListBean>>>() {
+                override fun onSucceed(data: NewBaseBean<List<FeelListBean>>) {
+                   dismissLoading()
+                    runOnUiThread {
+                        try {
+                            val data1 = data.data
+                            (list.adapter as FeelListAdapter).addData(data1)
+                            (list.adapter as FeelListAdapter).notifyDataSetChanged()
+                        }catch (e:Exception){
+                            ToastUtils.showShort("error is $e")
+                        }
+                    }
+                }
+
+                override fun onFailed() {
+                   dismissLoading()
+                }
+            })
     }
 
     fun test() {
@@ -56,16 +89,16 @@ class FeelListActivity : BaseActivity() {
 
 
 
-            feelListBean.topLatitude = topLatitude
-            feelListBean.bottomLatitude = bottomLatitude
-            feelListBean.topLongitude = topLongitude
-            feelListBean.bottomLongitude = bottomLongitude
+            feelListBean.wdmin = topLatitude
+            feelListBean.wdmax = bottomLatitude
+            feelListBean.jdmin = topLongitude
+            feelListBean.jdmax = bottomLongitude
 
 
 
             feelListBean.time = System.currentTimeMillis().toString()
-            feelListBean.type = "磁场"
-            feelListBean.targetType = "车辆"
+            feelListBean.mblb = "磁场"
+            feelListBean.fxmb = "车辆"
             arrayList.add(feelListBean)
         }
 

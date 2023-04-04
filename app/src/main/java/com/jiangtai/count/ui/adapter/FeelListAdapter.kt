@@ -16,7 +16,7 @@ class FeelListAdapter : BaseQuickAdapter<FeelListBean, BaseViewHolder>(R.layout.
         val timeTextView = helper.getView<TextView>(R.id.tv_time)
 
         item?.let {
-            desTextView.text = "${item.type}发现目标${item.targetType}"
+            desTextView.text = "${item.mblb}发现目标${item.fxmb}"
             try {
                 val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd hh:mm")
                 val format = simpleDateFormat.format(Date(item.time.toLong()))

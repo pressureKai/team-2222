@@ -5,18 +5,39 @@ import android.os.Parcelable;
 
 public class FeelListBean implements Parcelable {
     //纬度上限
-    private Double topLatitude;
+    private Double wdmin;
     //纬度下限
-    private Double bottomLatitude;
+    private Double wdmax;
     //经度上限
-    private Double topLongitude;
+    private Double jdmin;
     //经度下限
-    private Double bottomLongitude;
+    private Double jdmax;
 
 
-    private String type;
-    private String targetType;
+    private String fxsj;
+    private String mblb;
+    private String fxmb = "";
 
+
+
+    private Double id;
+
+
+    public Double getId() {
+        return id;
+    }
+
+    public void setId(Double id) {
+        this.id = id;
+    }
+
+    public String getFxsj() {
+        return fxsj;
+    }
+
+    public void setFxsj(String fxsj) {
+        this.fxsj = fxsj;
+    }
 
     private String time;
     public static final Creator<FeelListBean> CREATOR = new Creator<FeelListBean>() {
@@ -37,27 +58,27 @@ public class FeelListBean implements Parcelable {
 
     protected FeelListBean(Parcel in) {
         if (in.readByte() == 0) {
-            topLatitude = null;
+            wdmin = null;
         } else {
-            topLatitude = in.readDouble();
+            wdmin = in.readDouble();
         }
         if (in.readByte() == 0) {
-            bottomLatitude = null;
+            wdmax = null;
         } else {
-            bottomLatitude = in.readDouble();
+            wdmax = in.readDouble();
         }
         if (in.readByte() == 0) {
-            topLongitude = null;
+            jdmin = null;
         } else {
-            topLongitude = in.readDouble();
+            jdmin = in.readDouble();
         }
         if (in.readByte() == 0) {
-            bottomLongitude = null;
+            jdmax = null;
         } else {
-            bottomLongitude = in.readDouble();
+            jdmax = in.readDouble();
         }
-        type = in.readString();
-        targetType = in.readString();
+        mblb = in.readString();
+        fxmb = in.readString();
         time = in.readString();
     }
 
@@ -70,52 +91,52 @@ public class FeelListBean implements Parcelable {
         this.time = time;
     }
 
-    public String getType() {
-        return type;
+    public String getMblb() {
+        return mblb;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setMblb(String mblb) {
+        this.mblb = mblb;
     }
 
-    public String getTargetType() {
-        return targetType;
+    public String getFxmb() {
+        return fxmb;
     }
 
-    public void setTargetType(String targetType) {
-        this.targetType = targetType;
+    public void setFxmb(String fxmb) {
+        this.fxmb = fxmb;
     }
 
-    public Double getTopLatitude() {
-        return topLatitude;
+    public Double getWdmin() {
+        return wdmin;
     }
 
-    public void setTopLatitude(Double topLatitude) {
-        this.topLatitude = topLatitude;
+    public void setWdmin(Double wdmin) {
+        this.wdmin = wdmin;
     }
 
-    public Double getBottomLatitude() {
-        return bottomLatitude;
+    public Double getWdmax() {
+        return wdmax;
     }
 
-    public void setBottomLatitude(Double bottomLatitude) {
-        this.bottomLatitude = bottomLatitude;
+    public void setWdmax(Double wdmax) {
+        this.wdmax = wdmax;
     }
 
-    public Double getTopLongitude() {
-        return topLongitude;
+    public Double getJdmin() {
+        return jdmin;
     }
 
-    public void setTopLongitude(Double topLongitude) {
-        this.topLongitude = topLongitude;
+    public void setJdmin(Double jdmin) {
+        this.jdmin = jdmin;
     }
 
-    public Double getBottomLongitude() {
-        return bottomLongitude;
+    public Double getJdmax() {
+        return jdmax;
     }
 
-    public void setBottomLongitude(Double bottomLongitude) {
-        this.bottomLongitude = bottomLongitude;
+    public void setJdmax(Double jdmax) {
+        this.jdmax = jdmax;
     }
 
     @Override
@@ -125,32 +146,32 @@ public class FeelListBean implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        if (topLatitude == null) {
+        if (wdmin == null) {
             dest.writeByte((byte) 0);
         } else {
             dest.writeByte((byte) 1);
-            dest.writeDouble(topLatitude);
+            dest.writeDouble(wdmin);
         }
-        if (bottomLatitude == null) {
+        if (wdmax == null) {
             dest.writeByte((byte) 0);
         } else {
             dest.writeByte((byte) 1);
-            dest.writeDouble(bottomLatitude);
+            dest.writeDouble(wdmax);
         }
-        if (topLongitude == null) {
+        if (jdmin == null) {
             dest.writeByte((byte) 0);
         } else {
             dest.writeByte((byte) 1);
-            dest.writeDouble(topLongitude);
+            dest.writeDouble(jdmin);
         }
-        if (bottomLongitude == null) {
+        if (jdmax == null) {
             dest.writeByte((byte) 0);
         } else {
             dest.writeByte((byte) 1);
-            dest.writeDouble(bottomLongitude);
+            dest.writeDouble(jdmax);
         }
-        dest.writeString(type);
-        dest.writeString(targetType);
+        dest.writeString(mblb);
+        dest.writeString(fxmb);
         dest.writeString(time);
     }
 }

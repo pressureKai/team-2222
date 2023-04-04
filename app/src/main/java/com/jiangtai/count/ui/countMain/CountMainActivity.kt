@@ -132,6 +132,11 @@ class CountMainActivity : BaseActivity() {
         ll_test.setOnClickListener {
             startActivity(Intent(this@CountMainActivity,ManagerTestActivity::class.java))
         }
+
+
+        ll_main.setOnClickListener {
+            startActivity(Intent(this@CountMainActivity,SourceManagerActivity::class.java))
+        }
     }
 
     override fun initListener() {

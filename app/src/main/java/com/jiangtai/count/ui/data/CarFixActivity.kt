@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.ViewPager
+import android.util.Log
 import android.view.View
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder
 import com.bigkoo.pickerview.view.OptionsPickerView
@@ -113,6 +114,7 @@ class CarFixActivity : BaseActivity() {
 
     private fun reshowData() {
         val id = intent.getStringExtra("id")
+
         if (id != null && id.isNotEmpty()) {
             iv_delete.visibility = View.VISIBLE
             val find = LitePal.where(

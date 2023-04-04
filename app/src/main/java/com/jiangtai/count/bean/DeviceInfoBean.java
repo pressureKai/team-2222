@@ -16,21 +16,21 @@ public class DeviceInfoBean  extends LitePalSupport {
     //登录的人员ID(用于区分每个登录的不同用户的数据)
     private String loginId;
     //装备实体ID
-    private String VID;
+    private String vid;
     //装备类别
-    private String ZBLB;
+    private String zblb;
     //装备维修信息
-    private String ZBWXXX;
+    private String zbwxxx;
     //累计摩托小时/飞行小时
-    private String MTXS;
+    private String mtxs;
     //余油量
-    private String YYL;
+    private String yyl;
     //任务状态（待命、在执行）
-    private String RWZT;
+    private String rwzt;
     //完好（正常、损坏）
-    private String GZBJ;
+    private String gzbj;
     //备注
-    private String BZ;
+    private String bz;
 
 
     private String recordID;
@@ -53,60 +53,60 @@ public class DeviceInfoBean  extends LitePalSupport {
         this.recordTime = recordTime;
     }
 
-    public String getVID() {
-        return VID;
+    public String getVid() {
+        return vid;
     }
 
-    public void setVID(String VID) {
-        this.VID = VID;
+    public void setVid(String vid) {
+        this.vid = vid;
     }
 
-    public String getZBLB() {
-        return ZBLB;
+    public String getZblb() {
+        return zblb;
     }
 
-    public void setZBLB(String ZBLB) {
-        this.ZBLB = ZBLB;
+    public void setZblb(String zblb) {
+        this.zblb = zblb;
     }
 
-    public String getZBWXXX() {
-        return ZBWXXX;
+    public String getZbwxxx() {
+        return zbwxxx;
     }
 
-    public void setZBWXXX(String ZBWXXX) {
-        this.ZBWXXX = ZBWXXX;
+    public void setZbwxxx(String zbwxxx) {
+        this.zbwxxx = zbwxxx;
     }
 
-    public String getMTXS() {
-        return MTXS;
+    public String getMtxs() {
+        return mtxs;
     }
 
-    public void setMTXS(String MTXS) {
-        this.MTXS = MTXS;
+    public void setMtxs(String mtxs) {
+        this.mtxs = mtxs;
     }
 
-    public String getYYL() {
-        return YYL;
+    public String getYyl() {
+        return yyl;
     }
 
-    public void setYYL(String YYL) {
-        this.YYL = YYL;
+    public void setYyl(String yyl) {
+        this.yyl = yyl;
     }
 
-    public String getRWZT() {
-        return RWZT;
+    public String getRwzt() {
+        return rwzt;
     }
 
-    public void setRWZT(String RWZT) {
-        this.RWZT = RWZT;
+    public void setRwzt(String rwzt) {
+        this.rwzt = rwzt;
     }
 
-    public String getGZBJ() {
-        return GZBJ;
+    public String getGzbj() {
+        return gzbj;
     }
 
-    public void setGZBJ(String GZBJ) {
-        this.GZBJ = GZBJ;
+    public void setGzbj(String gzbj) {
+        this.gzbj = gzbj;
     }
 
 
@@ -118,12 +118,12 @@ public class DeviceInfoBean  extends LitePalSupport {
         this.loginId = loginId;
     }
 
-    public String getBZ() {
-        return BZ;
+    public String getBz() {
+        return bz;
     }
 
-    public void setBZ(String BZ) {
-        this.BZ = BZ;
+    public void setBz(String bz) {
+        this.bz = bz;
     }
 
     public boolean save(Boolean isUpdate) {

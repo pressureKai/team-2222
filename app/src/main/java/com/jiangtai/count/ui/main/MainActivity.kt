@@ -56,9 +56,7 @@ import kotlin.math.abs
 class MainActivity : BaseActivity() {
     private var eleDistance: Int by Preference(Constant.ELE_DISTANCE, 0)
     private var practiceManagerFragment: PracticeManagerFragment? = null
-
-    private var signInFragment:SignInFragment ?= null
-
+    private var signInFragment: SignInFragment? = null
     private var taskFragment: TaskFragment? = null
     private var mapFragment: MapFragment? = null
     private var settingFragment: SettingFragment? = null
@@ -73,36 +71,41 @@ class MainActivity : BaseActivity() {
     private var eleMode: Boolean by Preference(Constant.ELE_MODE, false)
     private var eleTime: Int by Preference(Constant.ELE_TIME, 0)
     private var eleStartTime: Long by Preference(Constant.ELE_START_TIME, 0L)
-    private var latCenter :Double by Preference(Constant.LAT_CENTER,0.toDouble())
-    private var lngCenter :Double by Preference(Constant.LNG_CENTER,0.toDouble())
-   lateinit var timer: Timer
+    private var latCenter: Double by Preference(Constant.LAT_CENTER, 0.toDouble())
+    private var lngCenter: Double by Preference(Constant.LNG_CENTER, 0.toDouble())
+    lateinit var timer: Timer
     private var serverIp: String by Preference(Constant.SERVER_IP, "")
 
     private var currentIndex = 1
     override fun attachLayoutRes(): Int = R.layout.activity_main
     override fun initData() {
-
-      //      RunnaUtil.RunnaUtil(MainActivity.this)
-     //   startTimer()
-    }
-private  fun startTimer(){
-    timer= fixedRateTimer("",false,0,5000){
-        getWBFromServer()
+        // RunnaUtil.RunnaUtil(MainActivity.this)
+        // startTimer()
     }
 
-}
+    private fun startTimer() {
+        timer = fixedRateTimer("", false, 0, 5000) {
+            getWBFromServer()
+        }
+
+    }
+
     fun getWBFromServer() {
         val networkAvailable = NetWork.isNetworkAvailable(applicationContext);
-        if (networkAvailable){
-            if (serverIp.isNotEmpty()){
-                val taskList = MyRetrofit.instance.api.getwbList(LoginActivity.users_userid, LoginActivity.access_token)
+        if (networkAvailable) {
+            if (serverIp.isNotEmpty()) {
+                val taskList = MyRetrofit.instance.api.getwbList(
+                    LoginActivity.users_userid,
+                    LoginActivity.access_token
+                )
                 taskList.compose(ThreadSwitchTransformer())
                     .subscribe(object : CallbackListObserver<IsTaskBean>() {
                         override fun onSucceed(isTaskBean: IsTaskBean) {
-                            if (isTaskBean.data.size==0){
+                            if (isTaskBean.data.size == 0) {
 
-                            }else{
-                                val pancode  =   isTaskBean.data.get(0).issue_userid.subSequence(0,2).toString()
+                            } else {
+                                val pancode =
+                                    isTaskBean.data.get(0).issue_userid.subSequence(0, 2).toString()
                                 val taskBean = WbTaskBean()
                                 try {
                                     val taskId =
@@ -146,8 +149,9 @@ private  fun startTimer(){
                                     }
 
 
-                                    val realTaskId = if (taskId.contains(".0")) taskId.replace(".0", "")
-                                        .trim() else taskId
+                                    val realTaskId =
+                                        if (taskId.contains(".0")) taskId.replace(".0", "")
+                                            .trim() else taskId
 
                                     val scoreList =
                                         LitePal.where("taskId=?", realTaskId)
@@ -156,9 +160,9 @@ private  fun startTimer(){
                                         value.delete()
                                     }
 
-                                    val locationList =  LitePal.findAll(LocationReceiver::class.java)
-                                    for(value in locationList){
-                                        if(value.projectId.isEmpty()){
+                                    val locationList = LitePal.findAll(LocationReceiver::class.java)
+                                    for (value in locationList) {
+                                        if (value.projectId.isEmpty()) {
                                             value.delete()
                                         }
                                     }
@@ -166,53 +170,58 @@ private  fun startTimer(){
                                     LogUtils.e("MajorPracticeFragment", "delete error is $e")
                                 }
                                 try {
-                                    taskBean.startTime=CommonUtil.stringToLong(
-                                        isTaskBean.data.first().s_time,"yyyy-MM-dd HH:mm:ss")
-                                    taskBean.endTime=CommonUtil.stringToLong(
-                                        isTaskBean.data.first().e_time,"yyyy-MM-dd HH:mm:ss")
+                                    taskBean.startTime = CommonUtil.stringToLong(
+                                        isTaskBean.data.first().s_time, "yyyy-MM-dd HH:mm:ss"
+                                    )
+                                    taskBean.endTime = CommonUtil.stringToLong(
+                                        isTaskBean.data.first().e_time, "yyyy-MM-dd HH:mm:ss"
+                                    )
                                 } catch (e: Exception) {
-                                   // LogUtils.e(" error is $e")
+                                    // LogUtils.e(" error is $e")
                                 }
-                                taskBean.taskName=isTaskBean.data.first().plan_name
-                                taskBean.taskId=pancode
-                                taskBean.iswb=true
-                                val projectList=ArrayList<WbProject>()
-                                val personList=ArrayList<WbPerson>()
-                                for (value in isTaskBean.data){
+                                taskBean.taskName = isTaskBean.data.first().plan_name
+                                taskBean.taskId = pancode
+                                taskBean.iswb = true
+                                val projectList = ArrayList<WbProject>()
+                                val personList = ArrayList<WbPerson>()
+                                for (value in isTaskBean.data) {
                                     val project = WbProject()
-                                    project.projectName=value.task_name
-                                    project.projectId=value.id
-                                    project.taskId=pancode
-                                    project.projectContent=value.remark+";任务计划："+value.plan_name
-                                    project.peopleId=value.issue_userid
-                                    project.startTime=CommonUtil.stringToLong(
-                                        value.s_time,"yyyy-MM-dd HH:mm:ss")
-                                    project.endTime=CommonUtil.stringToLong(
-                                        value.e_time,"yyyy-MM-dd HH:mm:ss")
+                                    project.projectName = value.task_name
+                                    project.projectId = value.id
+                                    project.taskId = pancode
+                                    project.projectContent =
+                                        value.remark + ";任务计划：" + value.plan_name
+                                    project.peopleId = value.issue_userid
+                                    project.startTime = CommonUtil.stringToLong(
+                                        value.s_time, "yyyy-MM-dd HH:mm:ss"
+                                    )
+                                    project.endTime = CommonUtil.stringToLong(
+                                        value.e_time, "yyyy-MM-dd HH:mm:ss"
+                                    )
                                     projectList.add(project)
                                     project.save()
-                                    val issureUser =  value.issue_user
-                                    val issureUserId =  value.issue_userid
-                                    if (issureUser.isNotEmpty()){
+                                    val issureUser = value.issue_user
+                                    val issureUserId = value.issue_userid
+                                    if (issureUser.isNotEmpty()) {
                                         val users = issureUser.split(",")
                                         val usersId = issureUserId.split(",")
-                                        for ((index,user) in users.withIndex()){
+                                        for ((index, user) in users.withIndex()) {
                                             val person = WbPerson()
                                             person.name = user
-                                            person.personId=usersId[index]
-                                            person.taskId=pancode
-                                            person.takeDevice=value.task_device
-                                            person.deviceListLocal=value.device_code
-                                            person.projectId=value.id
+                                            person.personId = usersId[index]
+                                            person.taskId = pancode
+                                            person.takeDevice = value.task_device
+                                            person.deviceListLocal = value.device_code
+                                            person.projectId = value.id
                                             personList.add(person)
                                             person.save()
                                         }
                                     }
                                 }
-                                taskBean.projects=projectList
-                                taskBean.persons=personList
+                                taskBean.projects = projectList
+                                taskBean.persons = personList
                                 taskBean.save()
-                              //  RunnaUtil.RunnaUtil(this@MainActivity,isTaskBean)
+                                //  RunnaUtil.RunnaUtil(this@MainActivity,isTaskBean)
                             }
 
 
@@ -225,11 +234,12 @@ private  fun startTimer(){
                     })
 
             }
-            }else{
+        } else {
             ToastUtils.showShort("请检查网络")
         }
 
     }
+
     override fun useEventBus(): Boolean {
         return true
     }
@@ -251,13 +261,11 @@ private  fun startTimer(){
 
         Handler().postDelayed({
             showFragment(index)
-        },100)
+        }, 100)
 
 
 //        initMqtt(true)
 //        sendSMS()
-
-
 
 
 //        CheckDistanceService.startCurrentThread(this)
@@ -278,7 +286,6 @@ private  fun startTimer(){
 //        }
 
 
-
 //        send_command.setOnClickListener {
 //            val sendEntity = SendEntity()
 //            sendEntity.phoneId = "1"
@@ -293,7 +300,6 @@ private  fun startTimer(){
 //                }
 //            })
 //        }
-
 
 
 //        request_location.setOnClickListener {
@@ -370,15 +376,14 @@ private  fun startTimer(){
     }
 
 
-    private fun testMqtt(){
+    private fun testMqtt() {
         val mqttBean = MqttBean()
 
 
         val mqttItemBeans = ArrayList<MqttBean.MqttItemBean>()
-        for(value in 1..2){
-            val mqttItemBean =  MqttBean.MqttItemBean()
+        for (value in 1..2) {
+            val mqttItemBean = MqttBean.MqttItemBean()
             mqttItemBean.name = "text"
-
 
 
             val bean = MqttBean.bean()
@@ -398,7 +403,7 @@ private  fun startTimer(){
         mqttBean.inputs = mqttItemBeans
 
         val toJson = Gson().toJson(mqttBean)
-        LogUtils.e("Test",toJson)
+        LogUtils.e("Test", toJson)
     }
 
 
@@ -409,42 +414,42 @@ private  fun startTimer(){
         Thread {
             while (true) {
                 if (!isDestroyed) {
-                   if(!isPause){
+                    if (!isPause) {
                         if (eleMode) {
-                        if (eleTime != 0) {
-                            val l = System.currentTimeMillis() - eleStartTime
-                            if (l > (eleTime * 1000 * 60)) {
-                                eleStartTime = System.currentTimeMillis()
-                                val personList = getPersonList()
-                                if (personList.isNotEmpty()) {
+                            if (eleTime != 0) {
+                                val l = System.currentTimeMillis() - eleStartTime
+                                if (l > (eleTime * 1000 * 60)) {
+                                    eleStartTime = System.currentTimeMillis()
+                                    val personList = getPersonList()
+                                    if (personList.isNotEmpty()) {
 
-                                    Handler(Looper.getMainLooper()).postDelayed({
-                                        CommandUtils.inquiryDeviceCommand2(
-                                            this@MainActivity,
-                                            phoneId.toInt(),
-                                            mCurrentMajorProject.toInt()
-                                        )
-                                    },500)
+                                        Handler(Looper.getMainLooper()).postDelayed({
+                                            CommandUtils.inquiryDeviceCommand2(
+                                                this@MainActivity,
+                                                phoneId.toInt(),
+                                                mCurrentMajorProject.toInt()
+                                            )
+                                        }, 500)
 //                                    Thread{
 //                                        for (value in personList) {
 //                                            Thread.sleep(3000)
 //                                        }
 //                                    }.start()
-                                }
-                                if (System.currentTimeMillis() - eleStartTime > 59 * 1000) {
-                                    uploadLocation()
+                                    }
+                                    if (System.currentTimeMillis() - eleStartTime > 59 * 1000) {
+                                        uploadLocation()
+                                    }
                                 }
                             }
                         }
                     }
-                   }
                 }
             }
         }.start()
     }
 
 
-    private fun uploadLocation(){
+    private fun uploadLocation() {
         val personList = getPersonList()
         val arrayList = ArrayList<LocationReceiver>()
         for (value in personList) {
@@ -452,12 +457,12 @@ private  fun startTimer(){
                 "userId = ? and isSOS = ?",
                 value.personId.toUpperCase(), "0"
             ).find(LocationReceiver::class.java)
-            if(find.size > 0 ){
+            if (find.size > 0) {
                 arrayList.add(find.last())
             }
         }
 
-        if(arrayList.size > 0 && serverIp.isNotEmpty()){
+        if (arrayList.size > 0 && serverIp.isNotEmpty()) {
             val dipperBig = DipperBig()
             dipperBig.handsetnumber = CommonUtil.getSNCode().toString()
             dipperBig.cmd = "personlocationindication"
@@ -467,14 +472,15 @@ private  fun startTimer(){
 
 
             val taskpersonloclist = dipperBig.taskpersonloclist
-            for(value in arrayList){
+            for (value in arrayList) {
                 val bigDipperPersonVi = BigDipperPersonVi()
                 bigDipperPersonVi.sostype = value.sosType
                 bigDipperPersonVi.taskid = value.taskId
                 bigDipperPersonVi.shortid = "1"
-                bigDipperPersonVi.status  = "normal"
+                bigDipperPersonVi.status = "normal"
                 bigDipperPersonVi.heartrate = value.heartRate
-                bigDipperPersonVi.time = CommonUtil.formatTime(System.currentTimeMillis().toString())
+                bigDipperPersonVi.time =
+                    CommonUtil.formatTime(System.currentTimeMillis().toString())
                 bigDipperPersonVi.lat = value.lat
                 bigDipperPersonVi.lng = value.lng
                 bigDipperPersonVi.deviceid = value.userId
@@ -508,8 +514,8 @@ private  fun startTimer(){
      * @des 初始化Mqtt
      * @time 2021/8/12 1:42 下午
      */
-    private fun initMqtt(showToast: Boolean ?= true) {
-      //  mqttUrl = "tcp://221.226.11.218:22883"
+    private fun initMqtt(showToast: Boolean? = true) {
+        //  mqttUrl = "tcp://221.226.11.218:22883"
         mqttUrl = "tcp://169.254.28.223:1883"
         val onMqttMsgListener = object : OnMqttMsgListener {
             override fun onPubMessage(payload: ByteArray) {
@@ -520,7 +526,7 @@ private  fun startTimer(){
             override fun onSubMessage(topic: String, payload: ByteArray) {
                 //接收消息
                 val jsonStr = String(payload)
-               // ToastUtils.showShort("response json is $jsonStr")
+                // ToastUtils.showShort("response json is $jsonStr")
 
                 val beiDouReceiveBean = BeiDouReceiveBean()
                 beiDouReceiveBean.content = jsonStr
@@ -530,8 +536,6 @@ private  fun startTimer(){
                 parseMqtt(jsonStr)
             }
         }
-
-
 
 
         val onMqttStatusChangeListener = object : OnMqttStatusChangeListener {
@@ -545,24 +549,24 @@ private  fun startTimer(){
                 when (state) {
                     MqttStatus.SUCCESS -> {
                         Handler().postDelayed({
-                            if(showToast!!){
+                            if (showToast!!) {
                                 ToastUtils.showShort("连接成功")
                             }
-                        },100)
+                        }, 100)
                     }
                     MqttStatus.FAILURE -> {
                         Handler().postDelayed({
-                            if(showToast!!){
-                               // ToastUtils.showShort("连接失败 ${throwable.toString()}")
+                            if (showToast!!) {
+                                // ToastUtils.showShort("连接失败 ${throwable.toString()}")
                             }
-                        },100)
+                        }, 100)
                     }
                     else -> {
                         Handler().postDelayed({
-                            if(showToast!!){
+                            if (showToast!!) {
                                 ToastUtils.showShort("连接断开 ${throwable.toString()}")
                             }
-                        },100)
+                        }, 100)
                     }
                 }
             }
@@ -592,16 +596,16 @@ private  fun startTimer(){
     }
 
 
-    private fun parseMqtt(jsonStr: String){
+    private fun parseMqtt(jsonStr: String) {
         val mqttBean = ToJsonUtil.fromJson(jsonStr, MqttBean::class.java)
         for (value in mqttBean.inputs) {
             try {
-                if(value.name == "text"){
+                if (value.name == "text") {
                     val json = value.value
                     val bean = ToJsonUtil.fromJson(json, MqttBean.bean::class.java)
 
-                    if(bean.type == "2"){
-                        when(bean.values.toInt()) {
+                    if (bean.type == "2") {
+                        when (bean.values.toInt()) {
                             //1代表开饭，2代表集合，3代表休息，20代表自定义
                             20 -> {
                                 ToastUtils.showShort("自定义")
@@ -609,7 +613,7 @@ private  fun startTimer(){
                                 if (phoneId.isNotEmpty()) {
                                     if (mCurrentMajorProject.isNotEmpty()) {
                                         var custom = ""
-                                        if(bean.content.isNotEmpty()){
+                                        if (bean.content.isNotEmpty()) {
                                             custom = bean.content
                                             ToastUtils.showShort(custom)
                                             CommandUtils.actionCommand(
@@ -692,7 +696,7 @@ private  fun startTimer(){
                             eleDistance = bean.values.toInt()
                             eleStartTime = System.currentTimeMillis()
                             EventBus.getDefault().postSticky(EleBean())
-                        }catch (e:Exception){
+                        } catch (e: Exception) {
 
                         }
                     }
@@ -714,7 +718,7 @@ private  fun startTimer(){
                     transaction.add(R.id.container, practiceManagerFragment, "practice")
                 }
                 try {
-                    if(currentFragment != null){
+                    if (currentFragment != null) {
                         transaction.hide(currentFragment).show(practiceManagerFragment)
                         currentFragment = practiceManagerFragment
                         transaction.commit()
@@ -776,7 +780,7 @@ private  fun startTimer(){
 
             }
 
-            5->{
+            5 -> {
                 if (signInFragment == null) {
                     signInFragment = SignInFragment.getInstance()
                     transaction.add(R.id.container, signInFragment, "signIn")
@@ -964,39 +968,42 @@ private  fun startTimer(){
     }
 
 
-    @Subscribe(threadMode = ThreadMode.ASYNC,sticky = true)
-    fun showSOSDialog(sosBean:SosBean){
-      //  ToastUtils.showShort("显示SOS消息")
+    @Subscribe(threadMode = ThreadMode.ASYNC, sticky = true)
+    fun showSOSDialog(sosBean: SosBean) {
+        //  ToastUtils.showShort("显示SOS消息")
         EventBus.getDefault().removeStickyEvent(sosBean)
         runOnUiThread {
-            if((index != 3 && !isPause) || isPause){
+            if ((index != 3 && !isPause) || isPause) {
                 App.getMineContext()?.let {
                     CommonUtil.getTopActivityInstance()?.let { activity ->
                         DialogHelper.instance?.showSOSDialog(
                             activity as FragmentActivity,
                             sosBean,
-                            object :DialogHelper.RemindDialogClickListener{
-                            override fun onRemindDialogClickListener(positive: Boolean, message: String) {
-                                if(positive){
-                                    val intent = Intent(activity, MainActivity::class.java)
-                                    startActivity(intent)
-                                    Handler(Looper.getMainLooper()).postDelayed({
-                                        iv_practice.setImageResource(R.mipmap.my_but1)
-                                        tv_practice.setTextColor(resources.getColor(R.color.color_gray_FAFAFA))
-                                        iv_task.setImageResource(R.mipmap.ic_task_normal)
-                                        tv_task.setTextColor(resources.getColor(R.color.color_gray_FAFAFA))
-                                        iv_map.setImageResource(R.mipmap.my_rz)
-                                        tv_map.setTextColor(resources.getColor(R.color.color_blue_2979FF))
-                                        iv_setting.setImageResource(R.mipmap.my_setting)
-                                        tv_setting.setTextColor(resources.getColor(R.color.color_gray_FAFAFA))
-                                        window.statusBarColor = getColor(R.color.black)
-                                        index = 3
-                                        showFragment(3)
-                                    },200)
+                            object : DialogHelper.RemindDialogClickListener {
+                                override fun onRemindDialogClickListener(
+                                    positive: Boolean,
+                                    message: String
+                                ) {
+                                    if (positive) {
+                                        val intent = Intent(activity, MainActivity::class.java)
+                                        startActivity(intent)
+                                        Handler(Looper.getMainLooper()).postDelayed({
+                                            iv_practice.setImageResource(R.mipmap.my_but1)
+                                            tv_practice.setTextColor(resources.getColor(R.color.color_gray_FAFAFA))
+                                            iv_task.setImageResource(R.mipmap.ic_task_normal)
+                                            tv_task.setTextColor(resources.getColor(R.color.color_gray_FAFAFA))
+                                            iv_map.setImageResource(R.mipmap.my_rz)
+                                            tv_map.setTextColor(resources.getColor(R.color.color_blue_2979FF))
+                                            iv_setting.setImageResource(R.mipmap.my_setting)
+                                            tv_setting.setTextColor(resources.getColor(R.color.color_gray_FAFAFA))
+                                            window.statusBarColor = getColor(R.color.black)
+                                            index = 3
+                                            showFragment(3)
+                                        }, 200)
+                                    }
+                                    DialogHelper.instance?.hintSOSDialog()
                                 }
-                                DialogHelper.instance?.hintSOSDialog()
-                            }
-                        })
+                            })
                     }
 
                 }
@@ -1015,7 +1022,8 @@ private  fun startTimer(){
             val split = peopleId.split(",")
             for (value in split) {
                 LogUtils.e("value is ${value.toUpperCase()}")
-                val find1 = LitePal.where("personId = ?", value.toUpperCase()).find(Person::class.java)
+                val find1 =
+                    LitePal.where("personId = ?", value.toUpperCase()).find(Person::class.java)
                 arrayList.addAll(find1)
             }
         }

@@ -28,14 +28,12 @@ class UploadDataService :Service(){
     }
 
 
-
     private fun startUploadDataThread(){
         var index = 0
         Thread{
             while (mUploadData){
                 index++
                 Thread.sleep(100)
-                Log.e("upload","uploadData $index")
             }
             stopSelf()
         }.start()
@@ -52,9 +50,6 @@ class UploadDataService :Service(){
         return false
     }
 
-
-    //发送普通位置上报方法
-    //发送离散点位置上报方法
     @Subscribe(threadMode = ThreadMode.ASYNC, sticky = true)
     fun mineReceiver(e: UploadDataBean) {
         EventBus.getDefault().removeStickyEvent(e)
@@ -84,6 +79,5 @@ class UploadDataService :Service(){
             ToastUtils.showShort("stopUploadDataService")
             mUploadData = false
         }
-
     }
 }

@@ -2,4 +2,5 @@ include ':app',':mqtt'
 rootProject.name = "team"
 //include ':service433'
 include ':RadarScanViewLibrary'
+include ':easysocket'
 //include ':serviceBeiDou'

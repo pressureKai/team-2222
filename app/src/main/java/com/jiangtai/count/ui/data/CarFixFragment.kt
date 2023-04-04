@@ -1,6 +1,5 @@
 package com.jiangtai.count.ui.data
 
-import android.provider.FontsContract.FontRequestCallback
 import android.support.constraint.ConstraintLayout
 import android.util.DisplayMetrics
 import android.view.View
@@ -14,10 +13,17 @@ import com.blankj.utilcode.util.ToastUtils
 import com.contrarywind.view.WheelView
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseFragment
+import com.jiangtai.count.base.NewBaseBean
 import com.jiangtai.count.bean.CarFixBean
 import com.jiangtai.count.bean.DeviceInfoBean
+import com.jiangtai.count.net.CallbackListObserver
+import com.jiangtai.count.net.MyRetrofit
+import com.jiangtai.count.net.ThreadSwitchTransformer
 import com.jiangtai.count.util.CommonUtil
+import com.jiangtai.count.util.ToJsonUtil
 import kotlinx.android.synthetic.main.fragment_car_fix.*
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
 import org.litepal.LitePal
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -169,6 +175,7 @@ class CarFixFragment: BaseFragment() {
             val sFixPart = et_fix_part.text.toString()
             val sFixTime = et_fix_time.text.toString()
             val sPerson = et_person.text.toString()
+            val sContent = et_content.text.toString()
             val sNotice = et_notice.text.toString()
 
             var carFixBean : CarFixBean?= null
@@ -196,12 +203,13 @@ class CarFixFragment: BaseFragment() {
 
             carFixBean?.let {
                 carFixBean.wxdx = sNumber
-                carFixBean.wxsj = sFixTime
-                carFixBean.zblb = sType
-                carFixBean.wxpj = sFixPart
+                carFixBean.wssj = sFixTime
+                carFixBean.wxlx = sType
+                carFixBean.wxbj = sFixPart
                 carFixBean.wxry = sPerson
                 carFixBean.bz = sNotice
                 carFixBean.zbmc = sName
+                carFixBean.wxnr = sContent
 
                 val find = LitePal.where(
                     "VID = ? and loginId = ? ",
@@ -211,9 +219,9 @@ class CarFixFragment: BaseFragment() {
                     DeviceInfoBean::class.java
                 )
 
-                if (find.size == 0) {
-                    ToastUtils.showShort("您还未录入该设备的日常信息")
-                }
+//                if (find.size == 0) {
+//                    ToastUtils.showShort("您还未录入该设备的日常信息")
+//                }
                 //保存维修信息
                 carFixBean.save(isUpdate)
 
@@ -225,11 +233,30 @@ class CarFixFragment: BaseFragment() {
                     ToastUtils.showShort("保存成功")
                     requireActivity().finish()
                 }
+
+                sendDataToServer(carFixBean)
             }?:let {
                 ToastUtils.showShort("找不到该记录")
                 requireActivity().finish()
             }
         }
+    }
+
+    private fun sendDataToServer(carFixBean:CarFixBean){
+        val requestBody =
+            RequestBody.create("application/json; charset=utf-8".toMediaTypeOrNull(),
+                ToJsonUtil.getInstance().toJson(carFixBean))
+        val requestCallback = MyRetrofit.instance.api.sendFixData(requestBody)
+
+        requestCallback.compose(ThreadSwitchTransformer()).subscribe(object : CallbackListObserver<NewBaseBean<Any>>(){
+            override fun onSucceed(t: NewBaseBean<Any>?) {
+                ToastUtils.showShort("请求成功")
+            }
+
+            override fun onFailed() {
+
+            }
+        })
     }
 
     private fun checkResult(): Boolean {
@@ -239,10 +266,11 @@ class CarFixFragment: BaseFragment() {
         val sFixType = et_fix_part.text.toString()
         val sFixTime = et_fix_time.text.toString()
         val sPerson = et_person.text.toString()
+        val sContent = et_content.text.toString()
         val sNotice = et_notice.text.toString()
 
         val isChecked = sNumber.isNotEmpty() && sType.isNotEmpty()  && sName.isNotEmpty()
-                && sFixType.isNotEmpty() && sFixTime.isNotEmpty() && sPerson.isNotEmpty() && sNotice.isNotEmpty()
+                && sFixType.isNotEmpty() && sFixTime.isNotEmpty() && sPerson.isNotEmpty() && sNotice.isNotEmpty()&& sContent.isNotEmpty()
 
         if (!isChecked) {
             if (!checkAndToast(et_number)) {
@@ -261,6 +289,9 @@ class CarFixFragment: BaseFragment() {
                 return false
             }
             if (!checkAndToast(et_person)) {
+                return false
+            }
+            if (!checkAndToast(et_content)) {
                 return false
             }
             if (!checkAndToast(et_notice)) {
@@ -303,10 +334,10 @@ class CarFixFragment: BaseFragment() {
             }
             val carFixBean = find.first()
             et_number.setText(carFixBean.wxdx)
-            et_type.setText(carFixBean.zblb)
+            et_type.setText(carFixBean.wxlx)
             et_name.setText(carFixBean.zbmc)
-            et_fix_part.setText(carFixBean.wxpj)
-            et_fix_time.setText(carFixBean.wxsj)
+            et_fix_part.setText(carFixBean.wxbj)
+            et_fix_time.setText(carFixBean.wssj)
             et_person.setText(carFixBean.wxry)
             et_notice.setText(carFixBean.bz)
 

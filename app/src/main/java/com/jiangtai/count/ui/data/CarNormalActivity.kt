@@ -22,8 +22,6 @@ import kotlinx.android.synthetic.main.activity_car_normal.et_type
 import kotlinx.android.synthetic.main.activity_car_normal.iv_back
 import kotlinx.android.synthetic.main.activity_car_normal.iv_delete
 import kotlinx.android.synthetic.main.activity_car_normal.ll_type
-import kotlinx.android.synthetic.main.activity_device.*
-import kotlinx.android.synthetic.main.fragment_car_fix.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import org.greenrobot.eventbus.EventBus

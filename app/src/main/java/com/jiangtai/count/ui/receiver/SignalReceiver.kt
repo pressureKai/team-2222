@@ -41,13 +41,10 @@ class SignalReceiver : BroadcastReceiver() {
     @SuppressLint("WrongConstant")
     override fun onReceive(context: Context?, intent: Intent?) {
         intent?.let {
-    //        ToastUtils.showShort("我收到消息了")
             try {
                 val parser = it.getParcelableExtra<RcvData>("result")
-
                 val content = parser.getrcvdata().toList()
                 LogUtils.e("content is $content")
-      //          ToastUtils.showShort("content is $content describeContents $describeContents")
 
 
                 when (content[0]) {//命令字
@@ -167,7 +164,7 @@ class SignalReceiver : BroadcastReceiver() {
 
 
                     }
-                    0x60.toByte()-> {//收到上报成绩
+                    0x60.toByte() -> {//收到上报成绩
                         val pId = HexUtil.bcd2Str(content.subList(5, 6).toByteArray())
                         if (pId != phoneId) {
                             return
@@ -707,11 +704,6 @@ class SignalReceiver : BroadcastReceiver() {
 
 
                     }
-//                    0x1A.toByte() -> {
-////                    App.getMineContext()?.let {
-////                        NotificationHelper(it).showNotification(5,"sos")
-////                    }
-//                    }
                     0x56.toByte() -> {
                         Log.e("SignalReceiver", "原始数据为${content}")
                         val pId = HexUtil.bcd2Str(content.subList(4, 5).toByteArray())
@@ -805,7 +797,6 @@ class SignalReceiver : BroadcastReceiver() {
                         }
 
                     }
-
                     0x62.toByte() -> {
                         if(content.size == 35){
                             //专项计划和出车回场，成绩上报
@@ -1096,9 +1087,7 @@ class SignalReceiver : BroadcastReceiver() {
 
 
                     }
-
-
-                    0x67.toByte() ->{
+                    0x67.toByte() -> {
                         LogUtils.e("0x67 content is  $content")
                         val pId = HexUtil.bcd2Str(content.subList(2, 3).toByteArray())
                         LogUtils.e("0x67 pId is  $pId  phoneID $phoneId")
@@ -1121,7 +1110,6 @@ class SignalReceiver : BroadcastReceiver() {
                             LogUtils.e("0x67 不是目标手持不解析")
                         }
                     }
-
                     0x57.toByte() -> {
                         Log.e("SingleReceiver", "content is $content")
                         //手持收到考核开始指令
@@ -1252,10 +1240,6 @@ class SignalReceiver : BroadcastReceiver() {
 //                        }
                         }
                     }
-
-
-
-
                     0x64.toByte() -> {
                         //搜救指令上报
                         val message = "搜救指令上报"
@@ -1352,8 +1336,6 @@ class SignalReceiver : BroadcastReceiver() {
 
 
                     }
-
-
                     0x66.toByte() -> {
                         //位置信息上报
                         val message = "位置信息上报"
@@ -1435,6 +1417,7 @@ class SignalReceiver : BroadcastReceiver() {
                     }
 
                     else -> {
+
                     }
                 }
 

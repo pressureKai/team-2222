@@ -101,8 +101,6 @@ class NewLoginActivity :BaseActivity() {
         })
 
 
-
-
         iv_set.setOnClickListener {
 
         }

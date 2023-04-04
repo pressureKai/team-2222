@@ -67,58 +67,141 @@
         android:fillViewport="true">
 
 
-
         <LinearLayout
+            android:layout_margin="4dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+           <android.support.v7.widget.CardView
+               app:cardCornerRadius="8dp"
+               android:layout_margin="8dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+             <LinearLayout
+                 android:orientation="horizontal"
+                 android:gravity="center"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_weight="1"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:gravity="center">
+
+
+                             <TextView
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:text="ip地址"
+                                 android:textSize="14sp" />
+
+
+                             <android.support.constraint.ConstraintLayout
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="4">
+
+                                 <EditText
+                                     android:id="@+id/et_ip"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:background="@null"
+                                     android:hint="请输入IP地址 (192.168.2.1)"
+                                     android:lines="1"
+                                     android:paddingHorizontal="6dp"
+                                     android:paddingVertical="16dp"
+                                     android:singleLine="true"
+                                     android:textColor="@color/black"
+                                     android:textSize="14sp"
+                                     app:layout_constraintBottom_toBottomOf="parent"
+                                     app:layout_constraintTop_toTopOf="parent" />
+
+                                 <View
+                                     android:layout_width="match_parent"
+                                     android:layout_height="1dp"
+                                     android:layout_marginTop="8dp"
+                                     android:background="@color/color_gray_E0E0E0"
+                                     app:layout_constraintBottom_toBottomOf="parent" />
+                             </android.support.constraint.ConstraintLayout>
+
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:gravity="center">
+
+
+                             <TextView
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:text="端口号"
+                                 android:textSize="14sp" />
+
+
+                             <android.support.constraint.ConstraintLayout
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="4">
+
+                                 <EditText
+                                     android:id="@+id/et_port"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:background="@null"
+                                     android:hint="请输入端口号(8080)"
+                                     android:lines="1"
+                                     android:paddingHorizontal="6dp"
+                                     android:paddingVertical="16dp"
+                                     android:singleLine="true"
+                                     android:textColor="@color/black"
+                                     android:textSize="14sp"
+                                     app:layout_constraintBottom_toBottomOf="parent"
+                                     app:layout_constraintTop_toTopOf="parent" />
+
+
+                             </android.support.constraint.ConstraintLayout>
+
+
+                         </LinearLayout>
+
+                     </LinearLayout>
+                 </LinearLayout>
+
+
+                 <Button
+                     android:id="@+id/bt_connect"
+                     android:background="@drawable/shape_bg_btn_blue_round_8"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textColor="@color/white"
+                     android:text="连接"/>
+
+             </LinearLayout>
+           </android.support.v7.widget.CardView>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="功能码"
-                        android:textSize="14sp" />
-
-
-                    <android.support.constraint.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:focusable="false"
-                            android:focusableInTouchMode="false"
-                            android:text="0XC1"
-                            android:lines="1"
-                            android:paddingHorizontal="6dp"
-                            android:paddingVertical="16dp"
-                            android:singleLine="true"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-
-                    </android.support.constraint.ConstraintLayout>
-
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -141,13 +224,14 @@
                         android:layout_weight="4">
 
                         <EditText
+                            android:id="@+id/et_number"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:focusable="false"
-                            android:focusableInTouchMode="false"
                             android:hint="请输入10位装备编号"
+                            android:inputType="number"
                             android:lines="1"
+                            android:maxLength="10"
                             android:paddingHorizontal="6dp"
                             android:paddingVertical="16dp"
                             android:singleLine="true"
@@ -194,11 +278,11 @@
                             android:background="@null"
                             android:focusable="false"
                             android:focusableInTouchMode="false"
-                            android:text="1"
                             android:lines="1"
                             android:paddingHorizontal="6dp"
                             android:paddingVertical="16dp"
                             android:singleLine="true"
+                            android:text="1"
                             android:textColor="@color/black"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -213,15 +297,17 @@
             </LinearLayout>
 
             <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_margin="16dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                app:cardElevation="3dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -299,9 +385,10 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-
                             android:layout_height="wrap_content"
-                            android:gravity="center">
+
+                            android:gravity="center"
+                            android:visibility="gone">
 
 
                             <TextView
@@ -384,17 +471,22 @@
                                     android:background="@null"
                                     android:focusable="false"
                                     android:focusableInTouchMode="false"
-                                    android:text="116.4,39.9"
                                     android:lines="1"
                                     android:paddingHorizontal="6dp"
                                     android:paddingVertical="16dp"
                                     android:singleLine="true"
+                                    android:text="116.4,39.9"
                                     android:textColor="@color/black"
                                     android:textSize="14sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
-
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@color/color_gray_E0E0E0"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
                             </android.support.constraint.ConstraintLayout>
 
 
@@ -704,11 +796,11 @@
                         <Button
                             android:id="@+id/bt_commit_watch"
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_margin="16dp"
-                            android:text="发送腕表类信息"
-                            android:textColor="@color/white"
                             android:background="@drawable/shape_bg_btn_blue_round_8"
-                            android:layout_height="wrap_content"/>
+                            android:text="发送腕表类信息"
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
 
@@ -754,25 +846,16 @@
                                     android:background="@null"
                                     android:focusable="false"
                                     android:focusableInTouchMode="false"
-                                    android:text="116.4,39.9"
                                     android:lines="1"
                                     android:paddingHorizontal="6dp"
                                     android:paddingVertical="16dp"
                                     android:singleLine="true"
+                                    android:text="116.4,39.9"
                                     android:textColor="@color/black"
                                     android:textSize="14sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:layout_marginRight="16dp"
-                                    android:src="@drawable/icon_new_next"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintRight_toRightOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
 
                                 <View
                                     android:layout_width="match_parent"
@@ -847,30 +930,21 @@
                         </LinearLayout>
 
 
-
                         <Button
                             android:id="@+id/bt_commit_xinbiao"
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_margin="16dp"
-                            android:text="发送信标类信息"
-                            android:textColor="@color/white"
                             android:background="@drawable/shape_bg_btn_blue_round_8"
-                            android:layout_height="wrap_content"/>
+                            android:text="发送信标类信息"
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
-
-
 
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
-
-
-
-
-
-
 
 
     </android.support.v4.widget.NestedScrollView>

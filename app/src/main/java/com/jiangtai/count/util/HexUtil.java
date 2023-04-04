@@ -86,7 +86,13 @@ public class HexUtil {
 
         return out;
     }
-
+    public static byte[] intToBytes(int source, int length) {
+        byte[] b = new byte[length];
+        for (int i = 0; i < length; i++) {
+            b[i] = (byte) (source >> 8 * (length - i - 1) & 0xFF);
+        }
+        return b;
+    }
 
     protected static int toDigit(char ch, int index) {
         int digit = Character.digit(ch, 16);

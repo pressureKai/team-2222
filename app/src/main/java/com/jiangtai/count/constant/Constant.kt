@@ -12,6 +12,8 @@ object Constant{
     const val PHONE_ID ="phone_id"
     const val START_ID = "start_id"
     const val SERVER_IP ="server_ip"
+    const val SOCKET_IP ="socket_ip"
+    const val SOCKET_PORT ="socket_port"
     const val PHONE_IP ="phone_ip"
     const val LAST_REQUEST_TIME = "last_request_time"
 

@@ -44,35 +44,37 @@ class SettingFragment : BaseFragment() {
     private var phoneIp: String by Preference(Constant.PHONE_IP, "")
     private var currentTaskId: String by Preference(Constant.CURRENT_TASK_ID, "")
     override fun attachLayoutRes(): Int = R.layout.fragment_setting
-    private var cp: CPManager?= null
+    private var cp: CPManager? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initImmersionBar(dark = true)
+
     }
+
     override fun initView(view: View) {
         try {
             cp = context?.getSystemService("cpmanager") as CPManager
-        }catch (e:java.lang.Exception){
+        } catch (e: java.lang.Exception) {
 
         }
 
         iv_save.setOnClickListener {
-          val pid = et_phone_id.text.toString().trim()
-            if (pid.isNotEmpty() && pid.toInt()>=0 && pid.toInt()<=99) {
+            val pid = et_phone_id.text.toString().trim()
+            if (pid.isNotEmpty() && pid.toInt() >= 0 && pid.toInt() <= 99) {
                 phoneId = et_phone_id.text.toString().trim()
-            }else{
+            } else {
                 ToastUtils.showShort("ID 范围0-99,请重新设置")
                 et_phone_id.setText(phoneId)
                 return@setOnClickListener
             }
             val currentIP = et_serve_ip.text.toString().trim()
-            if (currentIP != serverIp){
+            if (currentIP != serverIp) {
                 serverIp = currentIP
                 MyRetrofit.resetInstance()
             }
 
-            phoneIp =(et_phone_ip.text.toString().trim())
+            phoneIp = (et_phone_ip.text.toString().trim())
             SaveDialog(requireContext()).show()
         }
         tv_del_task.setOnClickListener {
@@ -85,7 +87,7 @@ class SettingFragment : BaseFragment() {
             finishDialog.setonConfirmListen(object : ConfirmDialog.OnConfirmListener {
                 override fun onConfirm() {
                     LitePal.deleteDatabase("training")
-                    currentTaskId=""
+                    currentTaskId = ""
                     ToastUtils.showShort("清空成功")
                     EventBus.getDefault().post(ClearEvent())
                     LitePal.getDatabase()
@@ -101,13 +103,13 @@ class SettingFragment : BaseFragment() {
         }
 
         history.setOnClickListener {
-            requireActivity()?.let {
+            requireActivity().let {
                 val intent = Intent(it, BeiDouReceiverHistoryActivity::class.java)
                 startActivity(intent)
             }
         }
         send_history.setOnClickListener {
-            requireActivity()?.let {
+            requireActivity().let {
                 val intent = Intent(it, BeiDouSendHistoryActivity::class.java)
                 startActivity(intent)
             }
@@ -125,31 +127,34 @@ class SettingFragment : BaseFragment() {
 
         setting_1.setOnClickListener {
             //频点
-            mContext?.let {
-                initSignInSetDialog(it as FragmentActivity,object : DialogHelper.RemindDialogClickListener{
-                    override fun onRemindDialogClickListener(positive: Boolean, message: String) {
-                        try {
-                            val toInt = message.toInt()
-                            mContext?.let {
-                                //    CommandUtils.setPingdian(it,toInt)
-                                cp?.let {
-                                    val byteArrayOf = byteArrayOf(
-                                        0x00.toByte(),
-                                        0x04.toByte(),
-                                        0x10.toByte(),
-                                        toInt.toByte()
-                                    )
-                                    val sendConfigData =
-                                        it.sendConfigData(0x25.toByte(), byteArrayOf)
-                                    sendConfigData
-                                    //  ToastUtils.showShort("改变频点 :${sendConfigData}")
+            mContext?.let { it ->
+                initSignInSetDialog(it as FragmentActivity,
+                    object : DialogHelper.RemindDialogClickListener {
+                        override fun onRemindDialogClickListener(
+                            positive: Boolean,
+                            message: String
+                        ) {
+                            try {
+                                val toInt = message.toInt()
+                                mContext?.let {
+                                    //    CommandUtils.setPingdian(it,toInt)
+                                    cp?.let { cp ->
+                                        val byteArrayOf = byteArrayOf(
+                                            0x00.toByte(),
+                                            0x04.toByte(),
+                                            0x10.toByte(),
+                                            toInt.toByte()
+                                        )
+                                        val sendConfigData =
+                                            cp.sendConfigData(0x25.toByte(), byteArrayOf)
+                                        sendConfigData
+                                    }
                                 }
-                            }
-                        }catch (e:Exception){
+                            } catch (e: Exception) {
 
+                            }
                         }
-                    }
-                })
+                    })
             }
 
         }
@@ -158,46 +163,61 @@ class SettingFragment : BaseFragment() {
         setting_2.setOnClickListener {
             //功率
             mContext?.let {
-                initSignInSetDialog(it as FragmentActivity,object : DialogHelper.RemindDialogClickListener{
-                    override fun onRemindDialogClickListener(positive: Boolean, message: String) {
-                        try {
-                            val toInt = message.toInt()
-                            mContext?.let {
-                                //  CommandUtils.setPower(it,toInt)
-                                cp?.let {
-                                    val byteArrayOf = byteArrayOf(
-                                        0x00.toByte(),
-                                        0x04.toByte(),
-                                        0x11.toByte(),
-                                        toInt.toByte()
-                                    )
-                                    val sendConfigData =
-                                        it.sendConfigData(0x25.toByte(), byteArrayOf)
-                                    //  ToastUtils.showShort("改变功率 :${sendConfigData}")
+                initSignInSetDialog(
+                    it as FragmentActivity,
+                    object : DialogHelper.RemindDialogClickListener {
+                        override fun onRemindDialogClickListener(
+                            positive: Boolean,
+                            message: String
+                        ) {
+                            try {
+                                val toInt = message.toInt()
+                                mContext?.let {
+                                    cp?.let { cp ->
+                                        val byteArrayOf = byteArrayOf(
+                                            0x00.toByte(),
+                                            0x04.toByte(),
+                                            0x11.toByte(),
+                                            toInt.toByte()
+                                        )
+                                        cp.sendConfigData(0x25.toByte(), byteArrayOf)
+                                    }
                                 }
-                            }
-                        }catch (e:Exception){
+                            } catch (e: Exception) {
 
+                            }
                         }
-                    }
-                },true)
+                    },
+                    true
+                )
             }
+        }
+
+
+        setting_3.setOnClickListener {
+//            val byteArrayOf = byteArrayOf(
+//                0xA3.toByte(),
+//                0x04.toByte(),
+//                0x11.toByte(),
+//                toInt.toByte()
+//            )
+//            cp?.sendConfigData(0x25.toByte(), byteArrayOf)
         }
 
         tv_data_upload.setOnClickListener {
             val intent = Intent(requireContext(), DataActivity::class.java)
             startActivity(intent)
-            Toast.makeText(requireContext(),"数据上传",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "数据上传", Toast.LENGTH_SHORT).show()
         }
-        tv_environment_upload.setOnClickListener{
+        tv_environment_upload.setOnClickListener {
             val intent = Intent(requireContext(), EnvironmentDataActivity::class.java)
             startActivity(intent)
-            Toast.makeText(requireContext(),"数据上传",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "数据上传", Toast.LENGTH_SHORT).show()
         }
         tv_inspection_upload.setOnClickListener {
             val intent = Intent(requireContext(), InspectionDataActivity::class.java)
             startActivity(intent)
-            Toast.makeText(requireContext(),"数据上传",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "数据上传", Toast.LENGTH_SHORT).show()
         }
         tv_start.setOnClickListener {
             UploadDataService.stopUploadDataService()
@@ -229,7 +249,7 @@ class SettingFragment : BaseFragment() {
     private fun initSignInSetDialog(
         activity: FragmentActivity,
         remindDialogClickListener: DialogHelper.RemindDialogClickListener,
-        power:Boolean ?= false
+        power: Boolean? = false
     ): AlertDialog {
         val builder = AlertDialog.Builder(activity)
         val alertDialog = builder.create()
@@ -237,7 +257,9 @@ class SettingFragment : BaseFragment() {
         val inflate = View.inflate(activity, R.layout.dialog_config_set, null)
         val wheelView = inflate.findViewById<WheelView<Int>>(R.id.wheelview)
         val arrayList = ArrayList<Int>()
-        if(!power!!){
+        if (!power!!) {
+            // 422.0~424.0 以0.2为间隔
+            // 422.0,422.2,422.4,422.6,422.8,423,423.2,423.4,423.6,423.8,424.0
             for (value in 0..10) {
                 arrayList.add(value)
             }
@@ -251,14 +273,13 @@ class SettingFragment : BaseFragment() {
         wheelView.data = arrayList
 
 
-
         val cancelTextView = inflate.findViewById<TextView>(R.id.cancel)
         val confirmTextView = inflate.findViewById<TextView>(R.id.confirm)
 
         val title = inflate.findViewById<TextView>(R.id.title)
         val des = inflate.findViewById<TextView>(R.id.des)
 
-        if(power!!){
+        if (power!!) {
             title.text = "功率设置"
             des.text = "功率"
         } else {

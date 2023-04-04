@@ -2,6 +2,7 @@ package com.jiangtai.count.bean;
 
 import com.jiangtai.count.util.CommonUtil;
 
+import org.litepal.LitePal;
 import org.litepal.crud.LitePalSupport;
 
 public class HelicopterOilInfoBean extends LitePalSupport {
@@ -17,132 +18,173 @@ public class HelicopterOilInfoBean extends LitePalSupport {
 
 
     //Y罐车号
-    private String YGCH;
+    private String fjbh;
     //加油时间
-    private String JYSJ;
+    private String jysj;
     //加油类型
-    private String JYLX;
+    private String jylx;
     //加油量
-    private String JYL;
+    private String jyl;
     //Y量品牌号
-    private String YPPPH;
+    private String ypmc;
     //Y品纯度
-    private String YPCD;
+    private String ypcd;
     //Y品含水量
-    private String YPHSL;
+    private String yphsl;
     //添加剂
-    private String TJJ;
+    private String tjj;
     //备注
-    private String BZ;
+    private String bz;
     //加油员
-    private String JYY;
+    private String jyy;
     //机长
-    private String JZ;
+    private String jz;
     //其他人员
-    private String QTRY;
+    private String qtry;
+
+
+    //加油人ID
+    private String jyrid;
+
+    //剩余油量
+    private String syyl;
 
 
 
+    public String getSyyl() {
+        return syyl;
+    }
 
+    public void setSyyl(String syyl) {
+        this.syyl = syyl;
+    }
+
+
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getJyrid() {
+        return jyrid;
+    }
+
+    public void setJyrid(String jyrid) {
+        this.jyrid = jyrid;
+    }
 
     private String recordID;
     private String recordTime;
 
 
+    public String getFjbh() {
+        return fjbh;
+    }
+
+    public void setFjbh(String fjbh) {
+        this.fjbh = fjbh;
+    }
+
     public String getYGCH() {
-        return YGCH;
+        return fjbh;
     }
 
     public void setYGCH(String YGCH) {
-        this.YGCH = YGCH;
+        this.fjbh = YGCH;
     }
 
-    public String getJYSJ() {
-        return JYSJ;
+    public String getJysj() {
+        return jysj;
     }
 
-    public void setJYSJ(String JYSJ) {
-        this.JYSJ = JYSJ;
+    public void setJysj(String jysj) {
+        this.jysj = jysj;
     }
 
-    public String getJYLX() {
-        return JYLX;
+    public String getJylx() {
+        return jylx;
     }
 
-    public void setJYLX(String JYLX) {
-        this.JYLX = JYLX;
+    public void setJylx(String jylx) {
+        this.jylx = jylx;
     }
 
-    public String getJYL() {
-        return JYL;
+    public String getJyl() {
+        return jyl;
     }
 
-    public void setJYL(String JYL) {
-        this.JYL = JYL;
+    public void setJyl(String jyl) {
+        this.jyl = jyl;
     }
 
-    public String getYPPPH() {
-        return YPPPH;
+    public String getYpmc() {
+        return ypmc;
     }
 
-    public void setYPPPH(String YPPPH) {
-        this.YPPPH = YPPPH;
+    public void setYpmc(String ypmc) {
+        this.ypmc = ypmc;
     }
 
-    public String getYPCD() {
-        return YPCD;
+    public String getYpcd() {
+        return ypcd;
     }
 
-    public void setYPCD(String YPCD) {
-        this.YPCD = YPCD;
+    public void setYpcd(String ypcd) {
+        this.ypcd = ypcd;
     }
 
-    public String getYPHSL() {
-        return YPHSL;
+    public String getYphsl() {
+        return yphsl;
     }
 
-    public void setYPHSL(String YPHSL) {
-        this.YPHSL = YPHSL;
+    public void setYphsl(String yphsl) {
+        this.yphsl = yphsl;
     }
 
-    public String getTJJ() {
-        return TJJ;
+    public String getTjj() {
+        return tjj;
     }
 
-    public void setTJJ(String TJJ) {
-        this.TJJ = TJJ;
+    public void setTjj(String tjj) {
+        this.tjj = tjj;
     }
 
-    public String getBZ() {
-        return BZ;
+    public String getBz() {
+        return bz;
     }
 
-    public void setBZ(String BZ) {
-        this.BZ = BZ;
+    public void setBz(String bz) {
+        this.bz = bz;
     }
 
-    public String getJYY() {
-        return JYY;
+    public String getJyy() {
+        return jyy;
     }
 
-    public void setJYY(String JYY) {
-        this.JYY = JYY;
+    public void setJyy(String jyy) {
+        this.jyy = jyy;
     }
 
-    public String getJZ() {
-        return JZ;
+    public String getJz() {
+        return jz;
     }
 
-    public void setJZ(String JZ) {
-        this.JZ = JZ;
+    public void setJz(String jz) {
+        this.jz = jz;
     }
 
-    public String getQTRY() {
-        return QTRY;
+    public String getQtry() {
+        return qtry;
     }
 
-    public void setQTRY(String QTRY) {
-        this.QTRY = QTRY;
+    public void setQtry(String qtry) {
+        this.qtry = qtry;
     }
 
     public String getRecordID() {
@@ -171,15 +213,39 @@ public class HelicopterOilInfoBean extends LitePalSupport {
     }
 
 
-    public boolean save(Boolean isUpdate) {
+    public CountRecordBean save(Boolean isUpdate) {
+        CountRecordBean countRecordBean = null;
+
+        if(recordID.isEmpty() || recordTime.isEmpty()){
+            String  recordTime = System.currentTimeMillis()+"";
+            this.recordTime = recordTime;
+            recordID = CountRecordBean.Companion.getCountId(recordTime);
+        }
         if(!isUpdate){
-            CountRecordBean countRecordBean = new CountRecordBean();
+            countRecordBean = new CountRecordBean();
             countRecordBean.setRecordTime(this.recordTime);
             countRecordBean.setRecordType(CountRecordBean.HELICOPTER_OIL_TYPE);
             countRecordBean.setRecordID(this.recordID);
             countRecordBean.save();
         }
         this.loginId = CommonUtil.INSTANCE.getLoginUserId();
-        return super.save();
+        jyrid = this.loginId;
+        boolean isExist = false;
+        try {
+            HelicopterOilInfoBean carFixBean = LitePal.find(HelicopterOilInfoBean.class, getId());
+            if(carFixBean != null){
+                isExist = true;
+            }
+        }catch (Exception e){
+
+        }
+
+
+        if(!isExist){
+            save();
+        } else {
+            update(getId());
+        }
+        return countRecordBean;
     }
 }

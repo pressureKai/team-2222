@@ -307,7 +307,6 @@
 
                         </LinearLayout>
                         <LinearLayout
-                            android:visibility="gone"
                             android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -335,9 +334,20 @@
                                     android:hint="请选择时间"
                                     android:layout_width="match_parent"
                                     android:background="@null"
+                                    android:clickable="true"
+                                    android:focusableInTouchMode="false"
                                     android:textSize="14sp"
                                     android:textColor="@color/black"
                                     android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginRight="16dp"
+                                    android:src="@drawable/icon_new_next"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
 
 
                                 <View

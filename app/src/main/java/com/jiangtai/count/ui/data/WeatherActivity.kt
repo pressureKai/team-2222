@@ -331,7 +331,7 @@ class WeatherActivity : BaseActivity() {
             et_fn_cloud_height.setText(weatherInfoBean.fng)
             et_wind_way.setText(weatherInfoBean.fx)
             et_wind_speed.setText(weatherInfoBean.fs)
-            et_visibility.setText( weatherInfoBean.njd )
+            et_visibility.setText( weatherInfoBean.njd)
             et_current_weather.setText( weatherInfoBean.dqtq)
             et_outside_temperature.setText( weatherInfoBean.qw)
             et_humidity.setText(weatherInfoBean.xdsd)

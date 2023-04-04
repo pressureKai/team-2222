@@ -17,37 +17,37 @@ public class AirDropInfo extends LitePalSupport {
     private String loginId;
 
     //人员ID(当前登录用户的人员ID)
-    private String RYID;
+    private String ryid;
     //物资编号
-    private String WZBH;
+    private String wzbh;
     //物资接收状态（接收/未接收）
-    private String WZJSZT;
+    private String wzjszt;
     //数据时间
-    private String SJSJ;
+    private String sjsj;
     //物资名称
-    private String WZMC;
+    private String wzmc;
     //物资备注
-    private String WZBZ;
+    private String wzbz;
     //记录ID
     private String recordID;
     //记录时间
     private String recordTime;
 
 
-    public String getWZMC() {
-        return WZMC;
+    public String getWzmc() {
+        return wzmc;
     }
 
-    public void setWZMC(String WZMC) {
-        this.WZMC = WZMC;
+    public void setWzmc(String wzmc) {
+        this.wzmc = wzmc;
     }
 
-    public String getWZBZ() {
-        return WZBZ;
+    public String getWzbz() {
+        return wzbz;
     }
 
-    public void setWZBZ(String WZBZ) {
-        this.WZBZ = WZBZ;
+    public void setWzbz(String wzbz) {
+        this.wzbz = wzbz;
     }
 
     public String getRecordID() {
@@ -66,36 +66,36 @@ public class AirDropInfo extends LitePalSupport {
         this.recordTime = recordTime;
     }
 
-    public String getRYID() {
-        return RYID;
+    public String getRyid() {
+        return ryid;
     }
 
-    public void setRYID(String RYID) {
-        this.RYID = RYID;
+    public void setRyid(String ryid) {
+        this.ryid = ryid;
     }
 
-    public String getWZBH() {
-        return WZBH;
+    public String getWzbh() {
+        return wzbh;
     }
 
-    public void setWZBH(String WZBH) {
-        this.WZBH = WZBH;
+    public void setWzbh(String wzbh) {
+        this.wzbh = wzbh;
     }
 
-    public String getWZJSZT() {
-        return WZJSZT;
+    public String getWzjszt() {
+        return wzjszt;
     }
 
-    public void setWZJSZT(String WZJSZT) {
-        this.WZJSZT = WZJSZT;
+    public void setWzjszt(String wzjszt) {
+        this.wzjszt = wzjszt;
     }
 
-    public String getSJSJ() {
-        return SJSJ;
+    public String getSjsj() {
+        return sjsj;
     }
 
-    public void setSJSJ(String SJSJ) {
-        this.SJSJ = SJSJ;
+    public void setSjsj(String sjsj) {
+        this.sjsj = sjsj;
     }
 
 

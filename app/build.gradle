@@ -56,7 +56,7 @@ android {
         variant ->
             variant.outputs.all {
                 //在这里修改apk文件名，引号内的字符串都可以随便定义
-                outputFileName = "人工录入采集-${variant.versionName}-beta.apk"
+                outputFileName = "1-${variant.versionName}-beta.apk"
             }
     }
 
@@ -64,6 +64,7 @@ android {
 }
 
 dependencies {
+    api project(':easysocket')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //noinspection GradleCompatible

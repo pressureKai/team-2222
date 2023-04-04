@@ -2,6 +2,7 @@ package com.jiangtai.count.bean;
 
 import com.jiangtai.count.util.CommonUtil;
 
+import org.litepal.LitePal;
 import org.litepal.crud.LitePalSupport;
 
 public class OilInfoBean  extends LitePalSupport {
@@ -18,26 +19,55 @@ public class OilInfoBean  extends LitePalSupport {
     private String loginId;
 
 
+    private int id;
+
     //罐号
-    private String GH;
+    private String gh;
     //油品名称
-    private String YPMC;
+    private String ypmc;
     //油高
-    private String YG;
+    private String yg;
     //容积表号
-    private String RJBH;
+    private String rjbh;
     //视密度
-    private String SMD;
+    private String smd;
     //油温
-    private String YW;
+    private String yw;
     //测量时间
-    private String SJSJ;
+    private String sjsj;
     //备注
     private String bz;
+
+
+    private String CLRID;
+    private String YTJ;
+
+    public String getCLRID() {
+        return CLRID;
+    }
+
+    public void setCLRID(String CLRID) {
+        this.CLRID = CLRID;
+    }
+
+    public String getYTJ() {
+        return YTJ;
+    }
+
+    public void setYTJ(String YTJ) {
+        this.YTJ = YTJ;
+    }
 
     private String recordID;
     private String recordTime;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getBz() {
         return bz;
@@ -47,60 +77,60 @@ public class OilInfoBean  extends LitePalSupport {
         this.bz = bz;
     }
 
-    public String getGH() {
-        return GH;
+    public String getGh() {
+        return gh;
     }
 
-    public void setGH(String GH) {
-        this.GH = GH;
+    public void setGh(String gh) {
+        this.gh = gh;
     }
 
-    public String getYPMC() {
-        return YPMC;
+    public String getYpmc() {
+        return ypmc;
     }
 
-    public void setYPMC(String YPMC) {
-        this.YPMC = YPMC;
+    public void setYpmc(String ypmc) {
+        this.ypmc = ypmc;
     }
 
-    public String getYG() {
-        return YG;
+    public String getYg() {
+        return yg;
     }
 
-    public void setYG(String YG) {
-        this.YG = YG;
+    public void setYg(String yg) {
+        this.yg = yg;
     }
 
-    public String getRJBH() {
-        return RJBH;
+    public String getRjbh() {
+        return rjbh;
     }
 
-    public void setRJBH(String RJBH) {
-        this.RJBH = RJBH;
+    public void setRjbh(String rjbh) {
+        this.rjbh = rjbh;
     }
 
-    public String getSMD() {
-        return SMD;
+    public String getSmd() {
+        return smd;
     }
 
-    public void setSMD(String SMD) {
-        this.SMD = SMD;
+    public void setSmd(String smd) {
+        this.smd = smd;
     }
 
-    public String getYW() {
-        return YW;
+    public String getYw() {
+        return yw;
     }
 
-    public void setYW(String YW) {
-        this.YW = YW;
+    public void setYw(String yw) {
+        this.yw = yw;
     }
 
-    public String getSJSJ() {
-        return SJSJ;
+    public String getSjsj() {
+        return sjsj;
     }
 
-    public void setSJSJ(String SJSJ) {
-        this.SJSJ = SJSJ;
+    public void setSjsj(String sjsj) {
+        this.sjsj = sjsj;
     }
 
     public String getRecordID() {
@@ -129,15 +159,38 @@ public class OilInfoBean  extends LitePalSupport {
     }
 
 
-    public boolean save(Boolean isUpdate) {
+    public CountRecordBean save(Boolean isUpdate) {
+        CountRecordBean countRecordBean = null;
+        if(recordID.isEmpty() || recordTime.isEmpty()){
+            String  recordTime = System.currentTimeMillis()+"";
+            this.recordTime = recordTime;
+            recordID = CountRecordBean.Companion.getCountId(recordTime);
+        }
         if(!isUpdate){
-            CountRecordBean countRecordBean = new CountRecordBean();
+            countRecordBean = new CountRecordBean();
             countRecordBean.setRecordTime(this.recordTime);
             countRecordBean.setRecordType(CountRecordBean.OIL_TYPE);
             countRecordBean.setRecordID(this.recordID);
             countRecordBean.save();
         }
         this.loginId = CommonUtil.INSTANCE.getLoginUserId();
-        return super.save();
+        CLRID = this.loginId;
+        boolean isExist = false;
+        try {
+            OilInfoBean carFixBean = LitePal.find(OilInfoBean.class,getId());
+            if(carFixBean != null){
+                isExist = true;
+            }
+        }catch (Exception e){
+
+        }
+
+
+        if(!isExist){
+            save();
+        } else {
+            update(getId());
+        }
+        return countRecordBean;
     }
 }

@@ -1,7 +1,10 @@
 package com.jiangtai.count.bean;
 
+import android.util.Log;
+
 import com.jiangtai.count.util.CommonUtil;
 
+import org.litepal.LitePal;
 import org.litepal.crud.LitePalSupport;
 
 public class CarFixBean extends LitePalSupport {
@@ -18,14 +21,49 @@ public class CarFixBean extends LitePalSupport {
     private String loginId;
     private String recordTime;
     private String recordID;
-    private String WXSJ;
-    private String WXPJ;
+    private String wssj;
+    private String wxbj;
     //维修对象 -> 装备编号
-    private String WXDX;
-    private String WXRY;
-    private String ZBLB;
-    private String ZBMC;
-    private String BZ;
+    private String wxdx;
+    private String wxry;
+
+    //装备类别
+    private String wxlx;
+    //装备名称
+    private String zbmc;
+
+
+    private String bz;
+
+    public String getBz() {
+        return bz;
+    }
+
+    public void setBz(String bz) {
+        this.bz = bz;
+    }
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public String getWXNR() {
+        return WXNR;
+    }
+
+    public void setWXNR(String WXNR) {
+        this.WXNR = WXNR;
+    }
+
+    //维修内容
+    private String WXNR;
 
     public String getLoginId() {
         return loginId;
@@ -35,60 +73,60 @@ public class CarFixBean extends LitePalSupport {
         this.loginId = loginId;
     }
 
-    public String getZBLB() {
-        return ZBLB;
+    public String getWxlx() {
+        return wxlx;
     }
 
-    public void setZBLB(String ZBLB) {
-        this.ZBLB = ZBLB;
+    public void setWxlx(String wxlx) {
+        this.wxlx = wxlx;
     }
 
-    public String getZBMC() {
-        return ZBMC;
+    public String getZbmc() {
+        return zbmc;
     }
 
-    public void setZBMC(String ZBMC) {
-        this.ZBMC = ZBMC;
+    public void setZbmc(String zbmc) {
+        this.zbmc = zbmc;
     }
 
-    public String getBZ() {
-        return BZ;
+//    public String getBZ() {
+//        return BZ;
+//    }
+//
+//    public void setBZ(String BZ) {
+//        this.BZ = BZ;
+//    }
+
+    public String getWssj() {
+        return wssj;
     }
 
-    public void setBZ(String BZ) {
-        this.BZ = BZ;
+    public void setWssj(String wssj) {
+        this.wssj = wssj;
     }
 
-    public String getWXSJ() {
-        return WXSJ;
+    public String getWxbj() {
+        return wxbj;
     }
 
-    public void setWXSJ(String WXSJ) {
-        this.WXSJ = WXSJ;
+    public void setWxbj(String wxbj) {
+        this.wxbj = wxbj;
     }
 
-    public String getWXPJ() {
-        return WXPJ;
+    public String getWxdx() {
+        return wxdx;
     }
 
-    public void setWXPJ(String WXPJ) {
-        this.WXPJ = WXPJ;
+    public void setWxdx(String wxdx) {
+        this.wxdx = wxdx;
     }
 
-    public String getWXDX() {
-        return WXDX;
+    public String getWxry() {
+        return wxry;
     }
 
-    public void setWXDX(String WXDX) {
-        this.WXDX = WXDX;
-    }
-
-    public String getWXRY() {
-        return WXRY;
-    }
-
-    public void setWXRY(String WXRY) {
-        this.WXRY = WXRY;
+    public void setWxry(String wxry) {
+        this.wxry = wxry;
     }
 
 
@@ -108,15 +146,46 @@ public class CarFixBean extends LitePalSupport {
         this.recordID = recordID;
     }
 
-    public boolean save(Boolean isUpdate) {
+    public CountRecordBean save(Boolean isUpdate) {
+        CountRecordBean countRecordBean = null;
+        Log.e("CarFixBean","recordID " + recordID + " recordTime "+ recordTime);
+        if(recordID.isEmpty() || recordTime.isEmpty()){
+            String  recordTime = System.currentTimeMillis()+"";
+            this.recordTime = recordTime;
+            recordID = CountRecordBean.Companion.getCountId(recordTime);
+        }
         if(!isUpdate){
-            CountRecordBean countRecordBean = new CountRecordBean();
+            countRecordBean = new CountRecordBean();
             countRecordBean.setRecordTime(this.recordTime);
             countRecordBean.setRecordType(CountRecordBean.CAR_FIX_TYPE);
             countRecordBean.setRecordID(this.recordID);
             countRecordBean.save();
         }
         this.loginId = CommonUtil.INSTANCE.getLoginUserId();
-        return super.save();
+        wxry = this.loginId;
+
+
+       // Log.e("CarFixBean","id  : "+ Long.parseLong(getID()));
+        boolean isExist = false;
+        try {
+            CarFixBean carFixBean = LitePal.find(CarFixBean.class, getId());
+            if(carFixBean != null){
+                isExist = true;
+            }
+        }catch (Exception e){
+
+        }
+
+
+        if(!isExist){
+
+            save();
+        } else {
+            Log.e("CarFixBean","update carFixBean : "+getId());
+            update(getId());
+        }
+
+
+        return countRecordBean;
     }
 }

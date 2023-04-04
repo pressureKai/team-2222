@@ -1,8 +1,14 @@
 package com.jiangtai.count.ui.data
 
+import android.support.constraint.ConstraintLayout
+import android.util.DisplayMetrics
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
+import com.bigkoo.pickerview.builder.TimePickerBuilder
+import com.bigkoo.pickerview.view.TimePickerView
 import com.blankj.utilcode.util.ToastUtils
+import com.contrarywind.view.WheelView
 import com.jiangtai.count.R
 import com.jiangtai.count.base.BaseActivity
 import com.jiangtai.count.base.NewBaseBean
@@ -25,6 +31,9 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import org.greenrobot.eventbus.EventBus
 import org.litepal.LitePal
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DeviceActivity : BaseActivity() {
     private var smellMessage = "正常"
@@ -74,12 +83,18 @@ class DeviceActivity : BaseActivity() {
                 } else {
                     deviceFeelInfoBean = DeviceFeelInfoBean()
                 }
+
+                var toString = ""
+                string2Date(sTime,"yyyy-MM-dd")?.let {
+                    toString =  string2Date(sTime,"yyyy-MM-dd")!!.time.toString()
+                }
                 deviceFeelInfoBean?.let {
+
                     deviceFeelInfoBean.ssbh = sNumber
                     deviceFeelInfoBean.qwxx = smellMessage
                     deviceFeelInfoBean.sslb = deviceType
                     deviceFeelInfoBean.wd = sTemperature
-                    deviceFeelInfoBean.sjsj = sTime
+                    deviceFeelInfoBean.sjsj = toString
                     deviceFeelInfoBean.bz = sNotice
 
 
@@ -138,15 +153,109 @@ class DeviceActivity : BaseActivity() {
             tv_un_normal.setBackgroundResource(R.drawable.shape_white_round_stroke_blue)
         }
 
+
+        et_time.setOnClickListener {
+            showDate(et_time)
+        }
         reShowData()
+    }
+    private fun getScreenHeightReal(): Int {
+        val dm = DisplayMetrics()
+        return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            windowManager.defaultDisplay.getRealMetrics(dm)
+            dm.heightPixels
+        } else {
+            resources.displayMetrics.heightPixels
+        }
+    }
+
+    private fun string2Date(format: String?, datess: String?): Date? {
+        val sdr = SimpleDateFormat(format)
+        var date: Date? = null
+        try {
+            date = sdr.parse(datess)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        return date
+    }
+    /**
+     * @des 显示时间选择器
+     * @time 2021/10/8 2:05 下午
+     */
+    private fun showDate(editText: EditText) {
+        var tempDate : Date =  Date(System.currentTimeMillis())
+        val date: Date = Date(System.currentTimeMillis())
+        val startCalendar = Calendar.getInstance()
+        startCalendar.set(1922,0,0)
+
+        val currentTimeMillis = System.currentTimeMillis()
+
+        val maxDate = Date(currentTimeMillis)
+        val endCalendar = Calendar.getInstance()
+        endCalendar.time = maxDate
+
+        val instance = Calendar.getInstance()
+        instance.time = if(editText.text.toString().isEmpty()){
+            date
+        } else {
+            string2Date("yyyy-MM-dd",editText.text.toString())
+        }
+
+
+        var build: TimePickerView? = null
+        build = TimePickerBuilder(
+            this
+        ) { _, _ ->
+
+        }.setLayoutRes(R.layout.dialog_time_picker) { v ->
+            v?.let {
+                val dialogLayout = v.findViewById<ConstraintLayout>(R.id.dialog_layout)
+                val layoutParams = dialogLayout.layoutParams
+                layoutParams.height = (getScreenHeightReal() / 5) * 2
+                dialogLayout.layoutParams = layoutParams
+
+
+                it.findViewById<TextView>(R.id.cancel).setOnClickListener {
+                    build?.dismiss()
+                }
+
+                it.findViewById<TextView>(R.id.confirm).setOnClickListener {
+                    val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+                    val format = simpleDateFormat.format(tempDate)
+                    editText.setText(format)
+                    build?.dismiss()
+                }
+            }
+        }
+            .setDate(instance)
+            .setDividerType(WheelView.DividerType.WRAP)
+            .setRangDate(startCalendar, endCalendar)
+            .setTextColorCenter(resources.getColor(R.color.black))
+            .setDividerColor(resources.getColor(R.color.black))
+            .setTextColorOut(resources.getColor(R.color.black))
+            .setBgColor(resources.getColor(android.R.color.transparent))
+            .setLineSpacingMultiplier(3f)
+            .setLabel(
+                "", "", "",
+                "", "", ""
+            )
+            .setOutSideCancelable(true)
+            .setItemVisibleCount(3)
+            .isAlphaGradient(true)
+            .setTimeSelectChangeListener {
+                tempDate = it
+            }
+            .build()
+        build.show()
     }
 
     private fun checkResult(): Boolean {
         val sNumber = et_number.text.toString()
         val sTemperature = et_temperature.text.toString()
-
+        val sTime = et_time.text.toString()
         val isChecked =
-            sNumber.isNotEmpty()  && sTemperature.isNotEmpty()
+            sNumber.isNotEmpty()  && sTemperature.isNotEmpty() && sTime.isNotEmpty()
 
 
         if (!isChecked) {
@@ -154,6 +263,9 @@ class DeviceActivity : BaseActivity() {
                 return false
             }
             if (!checkAndToast(et_temperature)) {
+                return false
+            }
+            if (!checkAndToast(et_time)) {
                 return false
             }
         }
@@ -188,7 +300,7 @@ class DeviceActivity : BaseActivity() {
             et_temperature.setText(deviceFeelInfoBean.wd)
             et_notice.setText(deviceFeelInfoBean.bz)
 
-            if(deviceFeelInfoBean.qwxx  == "异常"){
+            if(deviceFeelInfoBean.qwxx == "异常"){
                 tv_normal.setBackgroundResource(R.drawable.shape_white_round_stroke_gray)
                 tv_un_normal.setBackgroundResource(R.drawable.shape_white_round_stroke_blue)
             } else {
